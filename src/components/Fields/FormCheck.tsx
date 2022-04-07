@@ -11,20 +11,17 @@ import { ChangeEvent } from 'react'
 import { classNames } from '../../utils/index'
 
 const useStyles = makeStyles({
+  root: {
+    display: 'flex',
+    alignItems: 'flex-start'
+  },
   input: {
+    '&': {
+      marginTop: '-8px'
+    },
     '&.Mui-checked': {
       borderColor: '#fff',
-      outlineColor: '#fff',
-      color: 'black'
-    },
-    '& input': {
-      borderColor: '#fff',
-      outlineColor: '#fff',
-      backgroundColor: 'white'
-    },
-    '.MuiFormControlLabel-label': {
-      fontSize: '30px',
-      color: '#A6A6A6'
+      outlineColor: '#fff'
     }
   },
   label: {
@@ -77,6 +74,7 @@ const FormCheck = ({
                 })}
             />
           }
+          className={classes.root}
           label={<Typography className={classes.label}>{label}</Typography>}
           labelPlacement="end"
         />
