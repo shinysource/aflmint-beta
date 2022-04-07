@@ -1,39 +1,76 @@
-import { TextField, FormControl } from '@mui/material'
+import { TextField, FormGroup } from '@mui/material'
+import { makeStyles } from '@mui/styles'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { FormikValues } from 'formik'
 import { ChangeEvent } from 'react'
 
+const useStyles = makeStyles({
+  root: {
+    '& input': {
+      backgroundColor: '#1A1A1A'
+    }
+  },
+  label: {
+    color: '#A6A6A6'
+  }
+})
+
+const theme = createTheme({
+  palette: {
+    mode: 'dark'
+  }
+})
+
 interface FormInputProps {
+  type?: string
   name: string
-  title: string
   className?: string
   label?: string
+  placeholder?: string
   handleChange?: (evt: ChangeEvent<HTMLInputElement>) => void
   formik: FormikValues
+  isHint?: boolean
 }
 
 const FormInput = ({
+  type,
   name,
-  label,
   className,
+  label,
+  placeholder,
   handleChange,
-  formik
+  formik,
+  isHint
 }: FormInputProps) => {
+  const classes = useStyles()
+
   return (
-    <FormControl>
-      <TextField
-        type="text"
-        name={name}
-        value={formik.vales[name]}
-        onChange={handleChange}
-        label={label}
-        variant="filled"
-        {...(formik.touched[name] &&
-          formik.errors[name] && {
-            error: true,
-            helperText: formik.errors[name]
-          })}
-      />
-    </FormControl>
+    <ThemeProvider theme={theme}>
+      <FormGroup>
+        <TextField
+          type={type || 'text'}
+          name={name}
+          value={formik.values[name]}
+          onChange={handleChange}
+          className={className}
+          label={label}
+          placeholder={placeholder}
+          variant="filled"
+          InputProps={{
+            className: classes.root
+          }}
+          {...(formik.touched[name] &&
+            formik.errors[name] && {
+              error: true
+            })}
+          {...(isHint &&
+            formik.touched[name] &&
+            formik.errors[name] && {
+              helperText: formik.errors[name]
+            })}
+        />
+      </FormGroup>
+    </ThemeProvider>
   )
 }
 
