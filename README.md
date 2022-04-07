@@ -14,6 +14,7 @@ This project uses many tools like:
 - [Tailwindcss](https://tailwindcss.com)
 - [Eslint](https://eslint.org)
 - [Prettier](https://prettier.io)
+- [Docker](https://www.docker.com)
 
 ## Getting Started
 
@@ -47,6 +48,12 @@ npm run build
 
 ```bash
 npm run test
+```
+
+### Run application using Docker
+
+```bash
+docker-compose up
 ```
 
 ## License
