@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body * {
+  @apply font-inter;
+}
+
+.register-back {
+  @apply min-h-screen bg-no-repeat bg-cover overflow-auto bg-[url('public/backMobile.svg')] sm:bg-[url('public/back.svg')] md:bg-[url('public/back.svg')] lg:bg-[url('public/back.svg')];
+}
+
+.register {
+  @apply text-white;
+}

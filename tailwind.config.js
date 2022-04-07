@@ -8,14 +8,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        roboto: 'Roboto',
-        poppins: 'Poppins'
+        inter: 'Inter'
       },
       fontColor: {
         white: '#ffffff'
       },
       colors: {
-        grey: '#1a1a1f',
+        grey: '#A6A6A6',
         light: '#8E8E93',
         white: '#ffffff'
       }
