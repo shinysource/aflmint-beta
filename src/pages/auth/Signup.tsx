@@ -4,6 +4,9 @@ import { Grid } from '@mui/material'
 
 import FormInput from '../../components/Fields/FormInput'
 import FormCheck from '../../components/Fields/FormCheck'
+import FormSelect from '../../components/Fields/FormSelect'
+
+import useCountrySelect from 'hooks/useCountrySelect'
 
 const validationSchema = Yup.object().shape({
   firstName: Yup.string().required('Enter your Firstname'),
@@ -23,6 +26,8 @@ const initialValues = {
 }
 
 const Signup = () => {
+  const { countries } = useCountrySelect()
+
   const formik = useFormik({
     initialValues,
     validationSchema,
@@ -33,12 +38,7 @@ const Signup = () => {
   })
 
   return (
-    <Grid
-      container
-      justifyContent="center"
-      alignItems="center"
-      className="register-back"
-    >
+    <Grid container justifyContent="center" className="register-back">
       <Grid
         item
         container
@@ -50,16 +50,15 @@ const Signup = () => {
           <img src="public/assets/logo/Logo.svg"></img>
         </Grid>
         <Grid item className="text-white font-bold text-[32px]">
-          <div>Register</div>
+          <div className="font-podium49">Register</div>
         </Grid>
       </Grid>
-      <Grid item container justifyContent="center" alignItems="center">
-        <form onSubmit={formik.handleSubmit}>
+      <Grid item>
+        <form onSubmit={formik.handleSubmit} className="flex justify-center">
           <Grid
             item
             container
             justifyContent="center"
-            alignItems="center"
             spacing={2}
             xs={10}
             sm={8}
@@ -68,17 +67,13 @@ const Signup = () => {
           >
             <Grid
               item
-              className="text-white font-normal text-base"
-              container
-              justifyContent="center"
-              xs={10}
-              sm={8}
-              md={6}
-              lg={4}
+              className="text-white font-normal text-base text-center"
+              xs={12}
+              sm={12}
+              md={12}
+              lg={12}
             >
-              <Grid>
-                <div>Already have an account</div>
-              </Grid>
+              <div>Already have an account</div>
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={12}>
               <FormInput
@@ -125,15 +120,24 @@ const Signup = () => {
               />
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={12}>
+              <FormSelect
+                name="country"
+                options={countries}
+                label="Country"
+                placeholder="Select your country"
+                formik={formik}
+                handleChange={formik.handleChange}
+                isHint={true}
+              />
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={12}>
               <FormCheck
-                type="checkbox"
                 name="acceptTerms"
-                className=""
                 label="I would like to receive communications
-              from the AFL and AFL partners about products and
-              initiatives of the AFL and AFL partners, including communications about AFL Mint pre-sales, new drops and
-              special offers. I agree to the terms and
-              conditions of the AFL Privacy Policy"
+                  from the AFL and AFL partners about products and
+                  initiatives of the AFL and AFL partners, including communications about AFL Mint pre-sales, new drops and
+                  special offers. I agree to the terms and
+                  conditions of the AFL Privacy Policy"
                 formik={formik}
                 handleChange={formik.handleChange}
               />
