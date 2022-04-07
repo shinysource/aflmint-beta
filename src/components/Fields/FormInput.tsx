@@ -1,4 +1,4 @@
-import { TextField, FormControl } from '@mui/material'
+import { TextField, FormGroup } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { FormikValues } from 'formik'
@@ -46,7 +46,7 @@ const FormInput = ({
 
   return (
     <ThemeProvider theme={theme}>
-      <FormControl>
+      <FormGroup>
         <TextField
           type={type || 'text'}
           name={name}
@@ -69,7 +69,7 @@ const FormInput = ({
               helperText: formik.errors[name]
             })}
         />
-      </FormControl>
+      </FormGroup>
     </ThemeProvider>
   )
 }
