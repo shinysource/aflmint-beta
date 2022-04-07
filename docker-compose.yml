@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  afl-mint:
+    container_name: afl-mint
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - "3000:3000"

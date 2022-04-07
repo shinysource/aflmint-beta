@@ -3,6 +3,7 @@
   "description": "This is a AFL minting website built with React, TypeScript, Vite and Tailwind.",
   "version": "1.0",
   "scripts": {
+    "start": "vite --host",
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
