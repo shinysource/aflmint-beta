@@ -82,8 +82,9 @@ const FormSelect = ({
               </MenuItem>
             ))}
           </Select>
-          {isHint && formik.touched[name] && formik.errors[name]}
-          <FormHelperText>{formik.errors[name]}</FormHelperText>
+          {isHint && formik.touched[name] && formik.errors[name] && (
+            <FormHelperText>{formik.errors[name]}</FormHelperText>
+          )}
         </FormControl>
       </FormGroup>
     </ThemeProvider>

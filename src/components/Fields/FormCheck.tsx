@@ -60,9 +60,12 @@ const FormCheck = ({
 
   return (
     <ThemeProvider theme={theme}>
-      <FormControl error={formik.touched[name] && !!formik.errors[name]}>
-        {isHint && formik.touched[name] && formik.errors[name]}
-        <FormHelperText>{formik.errors[name]}</FormHelperText>
+      <FormControl
+        error={isHint && formik.touched[name] && !!formik.errors[name]}
+      >
+        {isHint && formik.touched[name] && formik.errors[name] && (
+          <FormHelperText>{formik.errors[name]}</FormHelperText>
+        )}
         <FormGroup className={className}>
           <FormControlLabel
             control={
