@@ -2,7 +2,9 @@ import {
   Checkbox,
   FormControlLabel,
   FormGroup,
-  Typography
+  FormControl,
+  Typography,
+  FormHelperText
 } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
@@ -11,20 +13,17 @@ import { ChangeEvent } from 'react'
 import { classNames } from '../../utils/index'
 
 const useStyles = makeStyles({
+  root: {
+    display: 'flex',
+    alignItems: 'flex-start'
+  },
   input: {
+    '&': {
+      marginTop: '-8px'
+    },
     '&.Mui-checked': {
       borderColor: '#fff',
-      outlineColor: '#fff',
-      color: 'black'
-    },
-    '& input': {
-      borderColor: '#fff',
-      outlineColor: '#fff',
-      backgroundColor: 'white'
-    },
-    '.MuiFormControlLabel-label': {
-      fontSize: '30px',
-      color: '#A6A6A6'
+      outlineColor: '#fff'
     }
   },
   label: {
@@ -41,46 +40,48 @@ const theme = createTheme({
 })
 
 interface FormCheckProps {
-  type?: string
   name: string
   className?: string
   label?: string
   handleChange?: (evt: ChangeEvent<HTMLInputElement>) => void
   formik: FormikValues
+  isHint?: boolean
 }
 
 const FormCheck = ({
-  type,
   name,
   label,
   className,
   handleChange,
-  formik
+  formik,
+  isHint
 }: FormCheckProps) => {
   const classes = useStyles()
 
   return (
     <ThemeProvider theme={theme}>
-      <FormGroup className={className}>
-        <FormControlLabel
-          control={
-            <Checkbox
-              name={name}
-              value={formik.values[name]}
-              onChange={handleChange}
-              className={classes.input}
-              classes={{ label: classes.label }}
-              {...(formik.touched[name] &&
-                formik.errors[name] && {
-                  error: true,
-                  helperText: formik.errors[name]
-                })}
-            />
-          }
-          label={<Typography className={classes.label}>{label}</Typography>}
-          labelPlacement="end"
-        />
-      </FormGroup>
+      <FormControl
+        error={isHint && formik.touched[name] && !!formik.errors[name]}
+      >
+        {isHint && formik.touched[name] && formik.errors[name] && (
+          <FormHelperText>{formik.errors[name]}</FormHelperText>
+        )}
+        <FormGroup className={className}>
+          <FormControlLabel
+            control={
+              <Checkbox
+                name={name}
+                value={!!formik.values[name]}
+                onChange={handleChange}
+                className={classes.input}
+              />
+            }
+            className={classes.root}
+            label={<Typography className={classes.label}>{label}</Typography>}
+            labelPlacement="end"
+          />
+        </FormGroup>
+      </FormControl>
     </ThemeProvider>
   )
 }

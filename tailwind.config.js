@@ -8,7 +8,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        inter: 'Inter'
+        inter: 'Inter',
+        podium49: 'PODIUMSharp-49',
+        podium96: 'PODIUMSharp-96'
       },
       fontColor: {
         white: '#ffffff'
