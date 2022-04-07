@@ -59,15 +59,8 @@ const FormInput = ({
           InputProps={{
             className: classes.root
           }}
-          {...(formik.touched[name] &&
-            formik.errors[name] && {
-              error: true
-            })}
-          {...(isHint &&
-            formik.touched[name] &&
-            formik.errors[name] && {
-              helperText: formik.errors[name]
-            })}
+          error={formik.touched[name] && !!formik.errors[name]}
+          helperText={isHint && formik.touched[name] && formik.errors[name]}
         />
       </FormGroup>
     </ThemeProvider>
