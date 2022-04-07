@@ -5,6 +5,7 @@ import { Grid } from '@mui/material'
 import FormInput from '../../components/Fields/FormInput'
 import FormCheck from '../../components/Fields/FormCheck'
 import FormSelect from '../../components/Fields/FormSelect'
+import RegisterButton from '../../components/Button/GradientButton'
 
 import useCountrySelect from 'hooks/useCountrySelect'
 
@@ -110,16 +111,6 @@ const Signup = () => {
               />
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={12}>
-              <FormInput
-                name="mobile"
-                formik={formik}
-                handleChange={formik.handleChange}
-                label="Mobile(optional)"
-                className="font-inter font-normal text-base"
-                placeholder="Mobile(optional)"
-              />
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={12}>
               <FormSelect
                 name="country"
                 options={countries}
@@ -128,6 +119,16 @@ const Signup = () => {
                 formik={formik}
                 handleChange={formik.handleChange}
                 isHint={true}
+              />
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={12}>
+              <FormInput
+                name="mobile"
+                formik={formik}
+                handleChange={formik.handleChange}
+                label="Mobile(optional)"
+                className="font-inter font-normal text-base"
+                placeholder="Mobile(optional)"
               />
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={12}>
@@ -140,6 +141,14 @@ const Signup = () => {
                   conditions of the AFL Privacy Policy"
                 formik={formik}
                 handleChange={formik.handleChange}
+                isHint={true}
+              />
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={12}>
+              <RegisterButton
+                name="register"
+                label="Register"
+                className="text-base font-bold tracking-widest py-[11px] rounded-sm"
               />
             </Grid>
           </Grid>
