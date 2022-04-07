@@ -9,6 +9,9 @@ const useStyles = makeStyles({
     '& input': {
       backgroundColor: '#1A1A1A'
     }
+  },
+  label: {
+    color: '#A6A6A6'
   }
 })
 
@@ -23,6 +26,7 @@ interface FormInputProps {
   name: string
   className?: string
   label?: string
+  placeholder?: string
   handleChange?: (evt: ChangeEvent<HTMLInputElement>) => void
   formik: FormikValues
   isHint?: boolean
@@ -31,8 +35,9 @@ interface FormInputProps {
 const FormInput = ({
   type,
   name,
-  label,
   className,
+  label,
+  placeholder,
   handleChange,
   formik,
   isHint
@@ -47,8 +52,9 @@ const FormInput = ({
           name={name}
           value={formik.values[name]}
           onChange={handleChange}
-          label={label}
           className={className}
+          label={label}
+          placeholder={placeholder}
           variant="filled"
           InputProps={{
             className: classes.root
