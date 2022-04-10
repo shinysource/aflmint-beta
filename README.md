@@ -1,4 +1,4 @@
-# AFL Minting Website
+# AFL Minting Website(Pre-registration)
 
 This is AFL Minting Website built with [ReactJS](https://reactjs.org) + [Vite](https://vitejs.dev), [Tailwindcss](https://tailwindcss.com).
 
