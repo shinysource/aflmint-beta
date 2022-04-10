@@ -1,11 +1,15 @@
+import { useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { Grid } from '@mui/material'
+import lookup from 'country-code-lookup'
+import { SelectChangeEvent } from '@mui/material/Select'
 
 import FormInput from '../../components/Fields/FormInput'
 import FormCheck from '../../components/Fields/FormCheck'
 import FormSelect from '../../components/Fields/FormSelect'
-import RegisterButton from '../../components/Button/GradientButton'
+import CustomButton from '../../components/Button/CustomButton'
+import FormMobile from '../../components/Fields/FormMobile'
 
 import useCountrySelect from 'hooks/useCountrySelect'
 
@@ -14,10 +18,25 @@ const validationSchema = Yup.object().shape({
   lastName: Yup.string().required('Enter your Lastname'),
   email: Yup.string().required('Enter your Email').email('Enter a valid Email'),
   country: Yup.mixed().required('Select a Country'),
+  mobile: Yup.string()
+    .matches(
+      /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
+      'Enter x numbers'
+    )
+    .notRequired(),
   acceptTerms: Yup.bool().oneOf([true], 'Accept the privacy terms to continue')
 })
 
-const initialValues = {
+interface RegisterForm {
+  firstName: string
+  lastName: string
+  email: string
+  mobile: string | undefined
+  country: string
+  acceptTerms: boolean
+}
+
+const initialValues: RegisterForm = {
   firstName: '',
   lastName: '',
   email: '',
@@ -27,19 +46,28 @@ const initialValues = {
 }
 
 const Signup = () => {
+  const [mobilePrefix, setMobilePrefix] = useState('')
   const { countries } = useCountrySelect()
 
   const formik = useFormik({
     initialValues,
     validationSchema,
     onSubmit: (values, actions) => {
-      console.log(values)
+      setMobilePrefix('')
       actions.resetForm({ values: initialValues })
+      formik.values.acceptTerms = false
     }
   })
 
+  const handleCountryChange = (evt: SelectChangeEvent) => {
+    formik.setFieldValue('country', evt.target.value)
+    if (typeof lookup.byInternet(evt.target.value)?.isoNo === 'string') {
+      setMobilePrefix(`+ ${lookup.byInternet(evt.target.value)?.isoNo} | `)
+    }
+  }
+
   return (
-    <Grid container justifyContent="center" className="register-back">
+    <Grid container justifyContent="center" className="signup-back">
       <Grid
         item
         container
@@ -51,9 +79,10 @@ const Signup = () => {
           <img src="public/assets/logo/Logo.svg"></img>
         </Grid>
         <Grid item className="text-white font-bold text-[32px]">
-          <div className="font-podium49">Register</div>
+          <div className="font-podium49">Sign Up</div>
         </Grid>
       </Grid>
+
       <Grid item>
         <form onSubmit={formik.handleSubmit} className="flex justify-center">
           <Grid
@@ -76,6 +105,27 @@ const Signup = () => {
             >
               <div>Already have an account</div>
             </Grid>
+            <Grid item className="text-white" xs={12} sm={12} md={12} lg={12}>
+              <CustomButton
+                model="secondary"
+                variant="outlined"
+                name="signup"
+                label="SIGN UP WITH OKTA"
+                size="medium"
+              />
+            </Grid>
+            <Grid
+              item
+              className="text-white"
+              sx={{ marginTop: '12px' }}
+              xs={12}
+              sm={12}
+              md={12}
+              lg={12}
+            >
+              <div>Or sign up with email</div>
+            </Grid>
+
             <Grid item xs={12} sm={12} md={12} lg={12}>
               <FormInput
                 name="firstName"
@@ -117,38 +167,42 @@ const Signup = () => {
                 label="Country"
                 placeholder="Select your country"
                 formik={formik}
-                handleChange={formik.handleChange}
+                handleChange={handleCountryChange}
                 isHint={true}
               />
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={12}>
-              <FormInput
+              <FormMobile
                 name="mobile"
                 formik={formik}
                 handleChange={formik.handleChange}
-                label="Mobile(optional)"
                 className="font-inter font-normal text-base"
+                label="Mobile"
                 placeholder="Mobile(optional)"
+                prefix={mobilePrefix}
+                isHint={true}
               />
             </Grid>
+
             <Grid item xs={12} sm={12} md={12} lg={12}>
               <FormCheck
                 name="acceptTerms"
                 label="I would like to receive communications
                   from the AFL and AFL partners about products and
                   initiatives of the AFL and AFL partners, including communications about AFL Mint pre-sales, new drops and
-                  special offers. I agree to the terms and
-                  conditions of the AFL Privacy Policy"
+                  special offers."
                 formik={formik}
                 handleChange={formik.handleChange}
                 isHint={true}
               />
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={12}>
-              <RegisterButton
-                name="register"
-                label="Register"
-                className="text-base font-bold tracking-widest py-[11px] rounded-sm"
+              <CustomButton
+                type="submit"
+                model="primary"
+                variant="contained"
+                name="signup"
+                label="SIGN UP"
               />
             </Grid>
           </Grid>

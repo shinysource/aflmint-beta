@@ -64,20 +64,30 @@ const FormCheck = ({
         error={isHint && formik.touched[name] && !!formik.errors[name]}
       >
         {isHint && formik.touched[name] && formik.errors[name] && (
-          <FormHelperText>{formik.errors[name]}</FormHelperText>
+          <FormHelperText sx={{ marginLeft: '0px' }}>
+            {formik.errors[name]}
+          </FormHelperText>
         )}
         <FormGroup className={className}>
           <FormControlLabel
             control={
               <Checkbox
+                checked={formik.values[name]}
                 name={name}
-                value={!!formik.values[name]}
+                value={formik.values[name]}
                 onChange={handleChange}
                 className={classes.input}
               />
             }
             className={classes.root}
-            label={<Typography className={classes.label}>{label}</Typography>}
+            label={
+              <Typography className={classes.label}>
+                {label}
+                <p className=" text-grey text-sm">
+                  I agree to the terms and conditions of the AFL Privacy Policy
+                </p>
+              </Typography>
+            }
             labelPlacement="end"
           />
         </FormGroup>

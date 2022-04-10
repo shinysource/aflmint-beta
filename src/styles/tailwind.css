@@ -21,10 +21,10 @@ body * {
   @apply font-inter;
 }
 
-.register-back {
-  @apply min-h-screen bg-no-repeat bg-cover overflow-auto bg-[url('public/backMobile.svg')] sm:bg-[url('public/back.svg')] md:bg-[url('public/back.svg')] lg:bg-[url('public/back.svg')];
+.signup-back {
+  @apply min-h-screen bg-no-repeat bg-cover overflow-auto py-6 bg-[url('public/backMobile.svg')] sm:bg-[url('public/back.svg')] md:bg-[url('public/back.svg')] lg:bg-[url('public/back.svg')];
 }
 
-.register {
+.signup {
   @apply text-white;
 }

@@ -41,7 +41,7 @@ interface FormInputProps {
   isHint?: boolean
 }
 
-const FormInput = ({
+const FormMobile = ({
   type,
   name,
   className,
@@ -69,15 +69,22 @@ const FormInput = ({
           error={formik.touched[name] && !!formik.errors[name]}
           helperText={isHint && formik.touched[name] && formik.errors[name]}
           InputProps={
-            (formik.touched[name] &&
-              formik.errors[name] && {
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <ErrorIcon sx={{ color: '#E41E31' }}></ErrorIcon>
-                  </InputAdornment>
-                )
-              },
-            { className: classes.root })
+            prefix
+              ? {
+                  startAdornment: (
+                    <InputAdornment position="start">{prefix}</InputAdornment>
+                  )
+                }
+              : formik.touched[name] && formik.errors[name]
+              ? {
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <ErrorIcon sx={{ color: '#E41E31' }}></ErrorIcon>
+                    </InputAdornment>
+                  ),
+                  className: classes.root
+                }
+              : { className: classes.root }
           }
           FormHelperTextProps={{ className: classes.helper }}
         />
@@ -86,4 +93,4 @@ const FormInput = ({
   )
 }
 
-export default FormInput
+export default FormMobile
