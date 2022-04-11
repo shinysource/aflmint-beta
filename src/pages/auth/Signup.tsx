@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { Grid } from '@mui/material'
-import lookup from 'country-code-lookup'
+// import lookup from 'country-code-lookup'
 import { SelectChangeEvent } from '@mui/material/Select'
 
 import FormInput from '../../components/Fields/FormInput'
@@ -11,6 +11,7 @@ import FormSelect from '../../components/Fields/FormSelect'
 import CustomButton from '../../components/Button/CustomButton'
 import FormMobile from '../../components/Fields/FormMobile'
 
+import { lookup, callingCountries } from 'country-data'
 import useCountrySelect from 'hooks/useCountrySelect'
 
 const validationSchema = Yup.object().shape({
@@ -23,6 +24,7 @@ const validationSchema = Yup.object().shape({
       /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
       'Enter x numbers'
     )
+    .max(9, 'number less than 9')
     .notRequired(),
   acceptTerms: Yup.bool().oneOf([true], 'Accept the privacy terms to continue')
 })
@@ -61,9 +63,11 @@ const Signup = () => {
 
   const handleCountryChange = (evt: SelectChangeEvent) => {
     formik.setFieldValue('country', evt.target.value)
-    if (typeof lookup.byInternet(evt.target.value)?.isoNo === 'string') {
-      setMobilePrefix(`+ ${lookup.byInternet(evt.target.value)?.isoNo} | `)
-    }
+    setMobilePrefix(
+      `${
+        lookup.countries({ name: evt.target.value })[0].countryCallingCodes
+      } | `
+    )
   }
 
   return (

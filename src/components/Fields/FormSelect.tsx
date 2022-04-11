@@ -76,7 +76,7 @@ const FormSelect = ({
               <em>{placeholder}</em>
             </MenuItem>
             {options.map((option: Option, index: number) => (
-              <MenuItem value={option.value} key={index}>
+              <MenuItem value={option.label} key={index}>
                 {option.label}
               </MenuItem>
             ))}
