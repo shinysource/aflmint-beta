@@ -42,7 +42,7 @@ const theme = createTheme({
 interface FormCheckProps {
   name: string
   className?: string
-  label?: string
+  label?: React.ReactNode
   handleChange?: (evt: ChangeEvent<HTMLInputElement>) => void
   formik: FormikValues
   isHint?: boolean
@@ -80,14 +80,7 @@ const FormCheck = ({
               />
             }
             className={classes.root}
-            label={
-              <>
-                <Typography className={classes.label}>{label}</Typography>
-                <p className=" text-grey text-sm">
-                  I agree to the terms and conditions of the AFL Privacy Policy
-                </p>
-              </>
-            }
+            label={label}
             labelPlacement="end"
           />
         </FormGroup>
