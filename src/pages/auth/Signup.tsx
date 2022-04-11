@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
@@ -15,8 +16,8 @@ import { lookup, callingCountries } from 'country-data'
 import useCountrySelect from 'hooks/useCountrySelect'
 
 const validationSchema = Yup.object().shape({
-  firstName: Yup.string().required('Enter your Firstname'),
-  lastName: Yup.string().required('Enter your Lastname'),
+  first_name: Yup.string().required('Enter your Firstname'),
+  last_name: Yup.string().required('Enter your Lastname'),
   email: Yup.string().required('Enter your Email').email('Enter a valid Email'),
   country: Yup.mixed().required('Select a Country'),
   mobile: Yup.string()
@@ -30,8 +31,8 @@ const validationSchema = Yup.object().shape({
 })
 
 interface RegisterForm {
-  firstName: string
-  lastName: string
+  first_name: string
+  last_name: string
   email: string
   mobile: string | undefined
   country: string
@@ -39,8 +40,8 @@ interface RegisterForm {
 }
 
 const initialValues: RegisterForm = {
-  firstName: '',
-  lastName: '',
+  first_name: '',
+  last_name: '',
   email: '',
   mobile: '',
   country: '',
@@ -50,6 +51,7 @@ const initialValues: RegisterForm = {
 const Signup = () => {
   const [mobilePrefix, setMobilePrefix] = useState('')
   const { countries } = useCountrySelect()
+  const salesforceURL = (import.meta.env.VITE_SALESFORCE_URL || '').toString()
 
   const formik = useFormik({
     initialValues,
@@ -57,7 +59,7 @@ const Signup = () => {
     onSubmit: (values, actions) => {
       setMobilePrefix('')
       actions.resetForm({ values: initialValues })
-      formik.values.acceptTerms = false
+      window.location.href = salesforceURL
     }
   })
 
@@ -88,7 +90,38 @@ const Signup = () => {
       </Grid>
 
       <Grid item>
-        <form onSubmit={formik.handleSubmit} className="flex justify-center">
+        <form
+          action={salesforceURL}
+          method="POST"
+          onSubmit={formik.handleSubmit}
+          className="flex justify-center"
+        >
+          <input
+            type="hidden"
+            name="captcha_settings"
+            value='{"keyname":"WebToLead_EOI_NFT","fallback":"true","orgId":"00D9D0000000W3o","ts":""}'
+          />
+          <input type="hidden" name="oid" value="00D9D0000000W3o" />
+          <input
+            type="hidden"
+            name="retURL"
+            value="https://www.aflmint.com.au/"
+          />
+          <input
+            type="hidden"
+            name="00N5g00000GRcv9"
+            id="00N5g00000GRcv9"
+            value="NFT - Expression of Interest"
+          />
+          <input
+            type="hidden"
+            name="recordType"
+            id="recordType"
+            value="0129D000001FuwI"
+          />
+          <input type="hidden" name="Campaign_ID" value="7019D0000002k1lQAA" />
+          <input type="hidden" name="member_status" value="Received" />
+          <input type="hidden" name="lead_source" value="Website" />
           <Grid
             item
             container
@@ -132,7 +165,8 @@ const Signup = () => {
 
             <Grid item xs={12} sm={12} md={12} lg={12}>
               <FormInput
-                name="firstName"
+                id="first_name"
+                name="first_name"
                 formik={formik}
                 handleChange={formik.handleChange}
                 className="font-inter font-normal text-base"
@@ -143,7 +177,8 @@ const Signup = () => {
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={12}>
               <FormInput
-                name="lastName"
+                id="last_name"
+                name="last_name"
                 formik={formik}
                 handleChange={formik.handleChange}
                 className="font-inter font-normal text-base"
@@ -154,6 +189,7 @@ const Signup = () => {
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={12}>
               <FormInput
+                id="email"
                 type="email"
                 name="email"
                 formik={formik}
@@ -177,6 +213,7 @@ const Signup = () => {
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={12}>
               <FormMobile
+                id="mobile"
                 name="mobile"
                 formik={formik}
                 handleChange={formik.handleChange}
@@ -191,21 +228,43 @@ const Signup = () => {
             <Grid item xs={12} sm={12} md={12} lg={12}>
               <FormCheck
                 name="acceptTerms"
-                label="I would like to receive communications
-                  from the AFL and AFL partners about products and
-                  initiatives of the AFL and AFL partners, including communications about AFL Mint pre-sales, new drops and
-                  special offers."
+                label={
+                  <div className=" text-sm text-grey">
+                    <p>
+                      I would like to receive communications from the AFL and
+                      AFL partners about products and initiatives of the AFL and
+                      AFL partners, including communications about AFL Mint
+                      pre-sales, new drops and special offers.
+                    </p>
+                    <div>
+                      I agree to the terms and conditions of the{' '}
+                      <a
+                        className="underline"
+                        href="https://www.afl.com.au/privacy"
+                        target="_blank"
+                      >
+                        AFL Privacy Policy
+                      </a>
+                    </div>
+                  </div>
+                }
                 formik={formik}
                 handleChange={formik.handleChange}
                 isHint={true}
               />
             </Grid>
+            <div
+              className="g-recaptcha"
+              data-sitekey="6Lc4L04fAAAAAF9IwSc0wmC4B-Ay1pcc6sfOFy89"
+            ></div>
+            <br />
+
             <Grid item xs={12} sm={12} md={12} lg={12}>
               <CustomButton
+                name="submit"
                 type="submit"
                 model="primary"
                 variant="contained"
-                name="signup"
                 label="SIGN UP"
               />
             </Grid>
