@@ -81,12 +81,12 @@ const FormCheck = ({
             }
             className={classes.root}
             label={
-              <Typography className={classes.label}>
-                {label}
+              <>
+                <Typography className={classes.label}>{label}</Typography>
                 <p className=" text-grey text-sm">
                   I agree to the terms and conditions of the AFL Privacy Policy
                 </p>
-              </Typography>
+              </>
             }
             labelPlacement="end"
           />
