@@ -72,6 +72,26 @@ const Signup = () => {
     )
   }
 
+  const handleSubmit = (event: SubmitEvent) => {
+    formik.setSubmitting(true)
+
+    formik
+      .validateForm()
+      .then((data) => {
+        if (Object.keys(data).length > 0) {
+          event.preventDefault()
+          let touched: Record<string, boolean> = {}
+          for (const key of Object.keys(data)) {
+            touched[key] = true
+          }
+          formik.setTouched(touched)
+          formik.setErrors(data)
+        }
+      })
+      .catch(() => console.log('error'))
+    return false
+  }
+
   return (
     <Grid container justifyContent="center" className="signup-back">
       <Grid
@@ -93,7 +113,7 @@ const Signup = () => {
         <form
           action={salesforceURL}
           method="POST"
-          onSubmit={formik.handleSubmit}
+          onSubmit={handleSubmit}
           className="flex justify-center"
         >
           <input
