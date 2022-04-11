@@ -13,6 +13,9 @@ const useStyles = makeStyles({
     },
     '&:hover': {
       backgroundColor: '#1A1A1A'
+    },
+    '&:focus-within': {
+      backgroundColor: '#1A1A1A'
     }
   },
   label: {
@@ -30,6 +33,7 @@ const theme = createTheme({
 })
 
 interface FormInputProps {
+  id?: string
   type?: string
   name: string
   className?: string
@@ -42,6 +46,7 @@ interface FormInputProps {
 }
 
 const FormInput = ({
+  id,
   type,
   name,
   className,
@@ -69,15 +74,16 @@ const FormInput = ({
           error={formik.touched[name] && !!formik.errors[name]}
           helperText={isHint && formik.touched[name] && formik.errors[name]}
           InputProps={
-            (formik.touched[name] &&
-              formik.errors[name] && {
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <ErrorIcon sx={{ color: '#E41E31' }}></ErrorIcon>
-                  </InputAdornment>
-                )
-              },
-            { className: classes.root })
+            formik.touched[name] && formik.errors[name]
+              ? {
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <ErrorIcon sx={{ color: '#E41E31' }}></ErrorIcon>
+                    </InputAdornment>
+                  ),
+                  className: classes.root
+                }
+              : { className: classes.root }
           }
           FormHelperTextProps={{ className: classes.helper }}
         />

@@ -13,6 +13,9 @@ const useStyles = makeStyles({
     },
     '&:hover': {
       backgroundColor: '#1A1A1A'
+    },
+    '&:focus-within': {
+      backgroundColor: '#1A1A1A'
     }
   },
   label: {
@@ -30,6 +33,7 @@ const theme = createTheme({
 })
 
 interface FormInputProps {
+  id?: string
   type?: string
   name: string
   className?: string
@@ -42,6 +46,7 @@ interface FormInputProps {
 }
 
 const FormMobile = ({
+  id,
   type,
   name,
   className,
