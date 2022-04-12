@@ -24,7 +24,7 @@ const validationSchema = Yup.object().shape({
       /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
       'Enter x numbers'
     )
-    .max(9, 'number less than 9')
+    .max(10, 'number less than 10')
     .notRequired(),
   acceptTerms: Yup.bool().oneOf([true], 'Accept the privacy terms to continue')
 })
