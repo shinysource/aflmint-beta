@@ -110,7 +110,7 @@ const Signup = () => {
 
       <Grid item>
         <form
-          action={salesforceURL}
+          action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8"
           method="POST"
           onSubmit={handleSubmit}
           className="flex justify-center"
