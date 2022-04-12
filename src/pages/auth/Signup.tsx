@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { Grid } from '@mui/material'
@@ -72,7 +71,7 @@ const Signup = () => {
     )
   }
 
-  const handleSubmit = (event: SubmitEvent) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     formik.setSubmitting(true)
 
     formik
@@ -80,7 +79,7 @@ const Signup = () => {
       .then((data) => {
         if (Object.keys(data).length > 0) {
           event.preventDefault()
-          let touched: Record<string, boolean> = {}
+          const touched: Record<string, boolean> = {}
           for (const key of Object.keys(data)) {
             touched[key] = true
           }
@@ -104,7 +103,7 @@ const Signup = () => {
         <Grid item>
           <img src="public/assets/logo/Logo.svg"></img>
         </Grid>
-        <Grid item className="text-white font-bold text-[32px]">
+        <Grid item className="text-[32px] font-bold text-white">
           <div className="font-podium49">Sign Up</div>
         </Grid>
       </Grid>
@@ -154,7 +153,7 @@ const Signup = () => {
           >
             <Grid
               item
-              className="text-white font-normal text-base text-center"
+              className="text-base font-normal text-center text-white"
               xs={12}
               sm={12}
               md={12}
@@ -189,7 +188,7 @@ const Signup = () => {
                 name="first_name"
                 formik={formik}
                 handleChange={formik.handleChange}
-                className="font-inter font-normal text-base"
+                className="font-inter text-base font-normal"
                 label="First name"
                 placeholder="First name"
                 isHint={true}
@@ -201,7 +200,7 @@ const Signup = () => {
                 name="last_name"
                 formik={formik}
                 handleChange={formik.handleChange}
-                className="font-inter font-normal text-base"
+                className="font-inter text-base font-normal"
                 label="Last name"
                 placeholder="Last name"
                 isHint={true}
@@ -214,7 +213,7 @@ const Signup = () => {
                 name="email"
                 formik={formik}
                 handleChange={formik.handleChange}
-                className="font-inter font-normal text-base"
+                className="font-inter text-base font-normal"
                 label="Email"
                 placeholder="Email"
                 isHint={true}
@@ -237,7 +236,7 @@ const Signup = () => {
                 name="mobile"
                 formik={formik}
                 handleChange={formik.handleChange}
-                className="font-inter font-normal text-base"
+                className="font-inter text-base font-normal"
                 label="Mobile"
                 placeholder="Mobile(optional)"
                 prefix={mobilePrefix}
@@ -262,6 +261,7 @@ const Signup = () => {
                         className="underline"
                         href="https://www.afl.com.au/privacy"
                         target="_blank"
+                        rel="noreferrer"
                       >
                         AFL Privacy Policy
                       </a>
