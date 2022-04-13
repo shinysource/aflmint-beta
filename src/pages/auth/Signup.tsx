@@ -55,8 +55,8 @@ const initialValues: RegisterForm = {
 
 const Signup = () => {
   const [mobilePrefix, setMobilePrefix] = useState('')
-  const { countries } = useCountrySelect()
   const formRef = useRef<HTMLFormElement>(null)
+  const { countries, prefferedCountries } = useCountrySelect()
   const salesforceURL = (import.meta.env.VITE_SALESFORCE_URL || '').toString()
 
   const formik = useFormik({
@@ -211,6 +211,7 @@ const Signup = () => {
               <FormSelect
                 name="country"
                 options={countries}
+                prefferedOptions={prefferedCountries}
                 label="Country"
                 placeholder="Select your country"
                 formik={formik}
@@ -238,15 +239,7 @@ const Signup = () => {
                 label={
                   <div className=" text-sm text-grey">
                     <p>
-                      I agree to the{' '}
-                      <a
-                        className="underline"
-                        href=" https://media.telstra.com.au/terms-of-use.html?ref=Net-Footer-Corp-Terms"
-                        target="_blank"
-                      >
-                        terms
-                      </a>{' '}
-                      and conditions of the{' '}
+                      I agree to the terms and conditions of the{' '}
                       <a
                         className="underline"
                         href="https://www.afl.com.au/privacy"
@@ -283,11 +276,13 @@ const Signup = () => {
                 isHint={true}
               />
             </Grid>
-            <div
-              className="g-recaptcha"
-              data-sitekey="6Lc4L04fAAAAAF9IwSc0wmC4B-Ay1pcc6sfOFy89"
-            ></div>
-            <br />
+            <Grid item>
+              <div
+                className="g-recaptcha"
+                data-theme="dark"
+                data-sitekey="6Lc4L04fAAAAAF9IwSc0wmC4B-Ay1pcc6sfOFy89"
+              ></div>
+            </Grid>
 
             <Grid item xs={12} sm={12} md={12} lg={12}>
               <CustomButton
