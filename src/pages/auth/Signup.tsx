@@ -131,6 +131,7 @@ const Signup = () => {
           <input type="hidden" name="lead_source" value="Website" />
           <Grid
             item
+            className="lg:!max-w-[1800px]"
             container
             justifyContent="center"
             spacing={2}
