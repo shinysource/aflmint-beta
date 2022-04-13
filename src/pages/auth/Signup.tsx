@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { useState, useRef } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
@@ -240,7 +239,15 @@ const Signup = () => {
                 label={
                   <div className=" text-sm text-grey">
                     <p>
-                      I agree to the terms and conditions of the{' '}
+                      I agree to the{' '}
+                      <a
+                        className="underline"
+                        href=" https://media.telstra.com.au/terms-of-use.html?ref=Net-Footer-Corp-Terms"
+                        target="_blank"
+                      >
+                        terms
+                      </a>{' '}
+                      and conditions of the{' '}
                       <a
                         className="underline"
                         href="https://www.afl.com.au/privacy"
