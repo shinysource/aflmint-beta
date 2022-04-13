@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { useState, useRef } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { Grid } from '@mui/material'
-// import lookup from 'country-code-lookup'
 import { SelectChangeEvent } from '@mui/material/Select'
 
 import FormInput from '../../components/Fields/FormInput'
@@ -11,7 +11,7 @@ import FormSelect from '../../components/Fields/FormSelect'
 import CustomButton from '../../components/Button/CustomButton'
 import FormMobile from '../../components/Fields/FormMobile'
 
-import { lookup, callingCountries } from 'country-data'
+import { lookup } from 'country-data'
 import useCountrySelect from 'hooks/useCountrySelect'
 
 const validationSchema = Yup.object().shape({
@@ -26,7 +26,11 @@ const validationSchema = Yup.object().shape({
     )
     .max(10, 'number less than 10')
     .notRequired(),
-  acceptTerms: Yup.bool().oneOf([true], 'Accept the privacy terms to continue')
+  acceptTerms: Yup.bool().oneOf([true], 'Accept the privacy terms to continue'),
+  acceptReceive: Yup.bool().oneOf(
+    [true],
+    'Accept the receive from AFL and AFL partners to continue'
+  )
 })
 
 interface RegisterForm {
@@ -36,6 +40,7 @@ interface RegisterForm {
   mobile: string | undefined
   country: string
   acceptTerms: boolean
+  acceptReceive: boolean
 }
 
 const initialValues: RegisterForm = {
@@ -44,21 +49,24 @@ const initialValues: RegisterForm = {
   email: '',
   mobile: '',
   country: '',
-  acceptTerms: false
+  acceptTerms: false,
+  acceptReceive: false
 }
 
 const Signup = () => {
   const [mobilePrefix, setMobilePrefix] = useState('')
   const { countries } = useCountrySelect()
+  const formRef = useRef<HTMLFormElement>(null)
   const salesforceURL = (import.meta.env.VITE_SALESFORCE_URL || '').toString()
 
   const formik = useFormik({
     initialValues,
     validationSchema,
     onSubmit: (values, actions) => {
-      setMobilePrefix('')
-      actions.resetForm({ values: initialValues })
-      window.location.href = salesforceURL
+      formik.setFieldValue('acceptTerms', false)
+      formik.setFieldValue('acceptReceive', false)
+      formRef.current?.submit()
+      actions.resetForm()
     }
   })
 
@@ -69,26 +77,6 @@ const Signup = () => {
         lookup.countries({ name: evt.target.value })[0].countryCallingCodes
       } | `
     )
-  }
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    formik.setSubmitting(true)
-
-    formik
-      .validateForm()
-      .then((data) => {
-        if (Object.keys(data).length > 0) {
-          event.preventDefault()
-          const touched: Record<string, boolean> = {}
-          for (const key of Object.keys(data)) {
-            touched[key] = true
-          }
-          formik.setTouched(touched)
-          formik.setErrors(data)
-        }
-      })
-      .catch(() => console.log('error'))
-    return false
   }
 
   return (
@@ -112,8 +100,8 @@ const Signup = () => {
         <form
           action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8"
           method="POST"
-          onSubmit={handleSubmit}
           className="flex justify-center"
+          ref={formRef}
         >
           <input
             type="hidden"
@@ -124,7 +112,7 @@ const Signup = () => {
           <input
             type="hidden"
             name="retURL"
-            value="https://www.aflmint.com.au/"
+            value="https://www.aflmint.com.au/thank-you/"
           />
           <input
             type="hidden"
@@ -250,13 +238,15 @@ const Signup = () => {
                 label={
                   <div className=" text-sm text-grey">
                     <p>
-                      I would like to receive communications from the AFL and
-                      AFL partners about products and initiatives of the AFL and
-                      AFL partners, including communications about AFL Mint
-                      pre-sales, new drops and special offers.
-                    </p>
-                    <div>
-                      I agree to the terms and conditions of the{' '}
+                      I agree to the{' '}
+                      <a
+                        className="underline"
+                        href=" https://media.telstra.com.au/terms-of-use.html?ref=Net-Footer-Corp-Terms"
+                        target="_blank"
+                      >
+                        terms
+                      </a>{' '}
+                      and conditions of the{' '}
                       <a
                         className="underline"
                         href="https://www.afl.com.au/privacy"
@@ -264,8 +254,28 @@ const Signup = () => {
                         rel="noreferrer"
                       >
                         AFL Privacy Policy
-                      </a>
-                    </div>
+                      </a>{' '}
+                      and to receiving communications in relation to AFL Mint
+                      announcements, including AFL Mint pre-sales, new drops and
+                      special offers.
+                    </p>
+                  </div>
+                }
+                formik={formik}
+                handleChange={formik.handleChange}
+                isHint={true}
+              />
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={12}>
+              <FormCheck
+                name="acceptReceive"
+                label={
+                  <div className=" text-sm text-grey">
+                    <p>
+                      I would like to receive communications from the AFL and
+                      AFL partners about other products and initiatives of the
+                      AFL and AFL partners.{' '}
+                    </p>
                   </div>
                 }
                 formik={formik}
@@ -281,11 +291,13 @@ const Signup = () => {
 
             <Grid item xs={12} sm={12} md={12} lg={12}>
               <CustomButton
-                name="submit"
-                type="submit"
+                type="button"
                 model="primary"
                 variant="contained"
                 label="SIGN UP"
+                onClick={() => {
+                  formik.handleSubmit()
+                }}
               />
             </Grid>
           </Grid>

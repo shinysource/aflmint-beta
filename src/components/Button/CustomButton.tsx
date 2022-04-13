@@ -75,7 +75,6 @@ export type CustomButtonProps = ButtonProps<
     label: string
     className?: string
     fontColor?: string
-    onClick?: () => {}
     size?: string
   }
 >
@@ -96,7 +95,7 @@ const CustomButton = ({
       <FormGroup>
         <Button
           className={`${classes[model]} ${classes[size || 'large']}`}
-          onClick={() => {}}
+          onClick={onClick}
           {...rest}
         >
           {label}
