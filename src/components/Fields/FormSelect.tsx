@@ -36,7 +36,7 @@ interface Option {
 interface FormSelectProps {
   name: string
   options: Option[]
-  prefferedOptions: Option[]
+  preferredOptions: Option[]
   className?: string
   label?: string
   placeholder?: string
@@ -48,7 +48,7 @@ interface FormSelectProps {
 const FormSelect = ({
   name,
   options,
-  prefferedOptions,
+  preferredOptions,
   className,
   label,
   placeholder,
@@ -77,7 +77,7 @@ const FormSelect = ({
             <MenuItem disabled value="">
               <em>{placeholder}</em>
             </MenuItem>
-            {prefferedOptions.map((option: Option, index: number) => (
+            {preferredOptions.map((option: Option, index: number) => (
               <MenuItem value={option.label} key={index}>
                 {option.label}
               </MenuItem>

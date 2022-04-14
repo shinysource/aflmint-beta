@@ -55,7 +55,7 @@ const initialValues: RegisterForm = {
 const Signup = () => {
   const [mobilePrefix, setMobilePrefix] = useState('')
   const formRef = useRef<HTMLFormElement>(null)
-  const { countries, prefferedCountries } = useCountrySelect()
+  const { countries, preferredCountries } = useCountrySelect()
   const salesforceURL = (import.meta.env.VITE_SALESFORCE_URL || '').toString()
 
   const formik = useFormik({
@@ -71,11 +71,18 @@ const Signup = () => {
 
   const handleCountryChange = (evt: SelectChangeEvent) => {
     formik.setFieldValue('country', evt.target.value)
-    setMobilePrefix(
-      `${
-        lookup.countries({ name: evt.target.value })[0].countryCallingCodes
-      } | `
-    )
+    if (
+      lookup.countries({ name: evt.target.value })[0]?.countryCallingCodes !==
+      undefined
+    ) {
+      setMobilePrefix(
+        `${
+          lookup.countries({ name: evt.target.value })[0].countryCallingCodes
+        } | `
+      )
+    } else {
+      setMobilePrefix('')
+    }
   }
 
   return (
@@ -143,13 +150,10 @@ const Signup = () => {
               item
               className="text-base font-normal text-center text-white"
               xs={12}
-              sm={12}
-              md={12}
-              lg={12}
             >
               <div>Already have an account</div>
             </Grid>
-            <Grid item className="text-white" xs={12} sm={12} md={12} lg={12}>
+            <Grid item className="text-white" xs={12}>
               <CustomButton
                 model="secondary"
                 variant="outlined"
@@ -170,7 +174,7 @@ const Signup = () => {
               <div>Or sign up with email</div>
             </Grid>
 
-            <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Grid item xs={12}>
               <FormInput
                 id="first_name"
                 name="first_name"
@@ -182,7 +186,7 @@ const Signup = () => {
                 isHint={true}
               />
             </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Grid item xs={12}>
               <FormInput
                 id="last_name"
                 name="last_name"
@@ -194,7 +198,7 @@ const Signup = () => {
                 isHint={true}
               />
             </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Grid item xs={12}>
               <FormInput
                 id="email"
                 type="email"
@@ -207,11 +211,11 @@ const Signup = () => {
                 isHint={true}
               />
             </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Grid item xs={12}>
               <FormSelect
                 name="country"
                 options={countries}
-                prefferedOptions={prefferedCountries}
+                preferredOptions={preferredCountries}
                 label="Country"
                 placeholder="Select your country"
                 formik={formik}
@@ -219,7 +223,7 @@ const Signup = () => {
                 isHint={true}
               />
             </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Grid item xs={12}>
               <FormMobile
                 id="mobile"
                 name="mobile"
@@ -233,7 +237,7 @@ const Signup = () => {
               />
             </Grid>
 
-            <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Grid item xs={12}>
               <FormCheck
                 name="acceptTerms"
                 label={
@@ -267,7 +271,7 @@ const Signup = () => {
                 isHint={true}
               />
             </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Grid item xs={12}>
               <FormCheck
                 name="acceptReceive"
                 label={
@@ -292,7 +296,7 @@ const Signup = () => {
               ></div>
             </Grid>
 
-            <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Grid item xs={12}>
               <CustomButton
                 type="button"
                 model="primary"

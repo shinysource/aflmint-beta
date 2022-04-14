@@ -1,19 +1,27 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 
-// import countryList from 'react-select-country-list'
+import countryList from 'react-select-country-list'
 
 const useCountrySelect = () => {
-  // const countries = useMemo(() => countryList().getData(), [])
-  const countries = [{label: 'Australia', value: 'AU'}, {label: 'New Zealand', value: 'NZ'}, {label: 'United States', value: 'US'}]
+  const countries = useMemo(() => countryList().getData(), [])
+  const preferredCountries = [
+    { label: 'Australia', value: 'AU' },
+    { label: 'New Zealand', value: 'NZ' },
+    { label: 'United States', value: 'US' }
+  ]
 
-  const prefferedCountries = [{label: 'Australia', value: 'AU'}, {label: 'New Zealand', value: 'NZ'}, {label: 'United States', value: 'US'}]
+  useEffect(() => {
+    preferredCountries.map((preferredCountry) => {
+      let index = countries.findIndex(
+        (country) => country.label == preferredCountry.label
+      )
+      if (index > 0) {
+        countries.splice(index, 1)
+      }
+    })
+  }, [])
 
-  prefferedCountries.map(prefferedCountry => {
-    let index = countries.findIndex(country => country.label == prefferedCountry.label)
-    countries.splice(index, 1)
-  })
-
-  return { countries, prefferedCountries }
+  return { countries, preferredCountries }
 }
 
 export default useCountrySelect

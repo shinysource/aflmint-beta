@@ -18,6 +18,11 @@ const useStyles = makeStyles({
       backgroundColor: '#1A1A1A'
     }
   },
+  input: {
+    '&:-webkit-autofill': {
+      WebkitBoxShadow: '0 0 0 1000px #3c3f43 inset'
+    }
+  },
   label: {
     color: '#A6A6A6'
   },
@@ -78,7 +83,9 @@ const FormMobile = ({
               ? {
                   startAdornment: (
                     <InputAdornment position="start">{prefix}</InputAdornment>
-                  )
+                  ),
+                  className: classes.root,
+                  classes: { input: classes.input }
                 }
               : formik.touched[name] && formik.errors[name]
               ? {
@@ -87,9 +94,10 @@ const FormMobile = ({
                       <ErrorIcon sx={{ color: '#E41E31' }}></ErrorIcon>
                     </InputAdornment>
                   ),
-                  className: classes.root
+                  className: classes.root,
+                  classes: { input: classes.input }
                 }
-              : { className: classes.root }
+              : { className: classes.root, classes: { input: classes.input } }
           }
           FormHelperTextProps={{ className: classes.helper }}
         />
