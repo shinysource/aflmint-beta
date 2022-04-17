@@ -12,7 +12,7 @@ const Footer = () => {
         container
         justifyContent="center"
         py={6}
-        className="bg-black1 text-center"
+        className="text-center"
       >
         <Grid item xs={12} pb={2}>
           <div className="font-podium49 uppercase font-bold text-lg">
