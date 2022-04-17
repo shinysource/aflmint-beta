@@ -12,7 +12,7 @@ const useCountrySelect = () => {
 
   useEffect(() => {
     preferredCountries.map((preferredCountry) => {
-      let index = countries.findIndex(
+      const index = countries.findIndex(
         (country) => country.label == preferredCountry.label
       )
       if (index > 0) {

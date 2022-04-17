@@ -9,7 +9,7 @@ import Footer from 'layout/Footer'
 const Home = () => {
   return (
     <>
-      <Grid container className="home-back py-10">
+      <Grid container className="py-10 home-back">
         <Grid item container justifyContent="center">
           <Grid item>
             <img src="public/assets/logo/Logo.svg"></img>
@@ -26,18 +26,18 @@ const Home = () => {
         >
           <Grid
             item
-            className="text-center font-normal text-4xl"
+            className="text-4xl font-normal text-center"
             xs={2}
             sm={2}
             md={12}
           >
-            <div className="font-podium96 uppercase text-4xl md:text-5xl font-medium xlg:text-7xl leading-8">
+            <div className="font-podium96 text-4xl xlg:text-7xl font-medium leading-8 uppercase md:text-5xl">
               This is epic
             </div>
           </Grid>
           <Grid
             item
-            className="text-center font-normal text-base md:text-2xl"
+            className="text-base font-normal text-center md:text-2xl"
             xs={11}
             sm={12}
             md={12}
@@ -46,13 +46,13 @@ const Home = () => {
           </Grid>
           <Grid item container justifyContent="center" xs={12}>
             <Grid item>
-              <Link to="/signup">
+              <Link to="/register">
                 <CustomButton
                   type="button"
                   model="primary"
                   variant="contained"
                   label="NOTIFY ME"
-                  className="uppercase w-36"
+                  className="w-36 uppercase"
                   endIcon={<ArrowForwardIosIcon sx={{ color: '#D3D3D3' }} />}
                 />
               </Link>
@@ -67,9 +67,9 @@ const Home = () => {
         </Grid>
       </Grid>
 
-      <Grid container justifyContent="center" className="bg-black1 text-center">
+      <Grid container justifyContent="center" className="text-center bg-black1">
         <Grid item xs={12} pt={4}>
-          <p className="font-podium49 text-2xl md:text-4xl font-bold uppercase">
+          <p className="font-podium49 text-2xl font-bold uppercase md:text-4xl">
             Epic footy moments get minted
           </p>
         </Grid>
@@ -78,7 +78,7 @@ const Home = () => {
             Welcome to AFL Mint, the home of officially licensed AFL NFTs. This
             is a new era in footy collectibles. Get involved from the first
             bounce by registering for exclusive early notification of theme
-            inaugural drop. It's mint.
+            inaugural drop. It&apos;s mint.
           </p>
         </Grid>
         <Grid item container justifyContent="center" xs={12} pt={2}>
@@ -89,7 +89,7 @@ const Home = () => {
                 model="primary"
                 variant="contained"
                 label="NOTIFY ME"
-                className="uppercase w-36"
+                className="w-36 uppercase"
                 endIcon={<ArrowForwardIosIcon sx={{ color: '#D3D3D3' }} />}
               />
             </Link>
