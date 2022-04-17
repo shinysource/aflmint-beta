@@ -9,7 +9,7 @@ import Footer from 'layout/Footer'
 const Home = () => {
   return (
     <>
-      <Grid container className="home-back">
+      <Grid container className="home-back py-10">
         <Grid item container justifyContent="center">
           <Grid item>
             <img src="public/assets/logo/Logo.svg"></img>
@@ -97,7 +97,7 @@ const Home = () => {
         </Grid>
       </Grid>
 
-      <Grid container>
+      <Grid container className="bg-black1">
         <Grid item sx={{ width: '100%' }}>
           <Footer />
         </Grid>

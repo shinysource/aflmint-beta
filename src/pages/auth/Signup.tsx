@@ -86,7 +86,7 @@ const Signup = () => {
   }
 
   return (
-    <Grid container justifyContent="center" className="signup-back">
+    <Grid container justifyContent="center" className="img-back py-9">
       <Grid
         item
         container
@@ -104,7 +104,7 @@ const Signup = () => {
 
       <Grid item>
         <form
-          action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8"
+          action={salesforceURL}
           method="POST"
           className="flex justify-center"
           ref={formRef}
