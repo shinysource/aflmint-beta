@@ -94,7 +94,9 @@ const CustomButton = ({
     <ThemeProvider theme={theme}>
       <FormGroup>
         <Button
-          className={`${classes[model]} ${classes[size || 'large']}`}
+          className={`${classes[model]} ${
+            classes[size || 'large']
+          } ${className}`}
           onClick={onClick}
           {...rest}
         >
