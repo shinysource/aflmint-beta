@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useMemo } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { Grid } from '@mui/material'
@@ -56,6 +56,7 @@ const Signup = () => {
   const [mobilePrefix, setMobilePrefix] = useState('')
   const formRef = useRef<HTMLFormElement>(null)
   const { countries, preferredCountries } = useCountrySelect()
+  const retURL = useMemo(() => `${window.location.origin}/thank-you`, [window])
   const salesforceURL = (import.meta.env.VITE_SALESFORCE_URL || '').toString()
 
   const formik = useFormik({
@@ -86,7 +87,7 @@ const Signup = () => {
   }
 
   return (
-    <Grid container justifyContent="center" className="img-back py-9">
+    <Grid container justifyContent="center" className="signup-back py-9">
       <Grid
         item
         container
@@ -115,11 +116,7 @@ const Signup = () => {
             value='{"keyname":"WebToLead_EOI_NFT","fallback":"true","orgId":"00D9D0000000W3o","ts":""}'
           />
           <input type="hidden" name="oid" value="00D9D0000000W3o" />
-          <input
-            type="hidden"
-            name="retURL"
-            value="https://www.aflmint.com.au/thank-you/"
-          />
+          <input type="hidden" name="retURL" value={retURL} />
           <input
             type="hidden"
             name="00N5g00000GRcv9"

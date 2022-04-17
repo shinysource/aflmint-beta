@@ -3,7 +3,7 @@ import Footer from 'layout/Footer'
 
 const Thanks = () => {
   return (
-    <Grid container className="img-back pt-9">
+    <Grid container className="thanks-back pt-9">
       <Grid item container justifyContent="center">
         <Grid item>
           <img src="public/assets/logo/Logo.svg"></img>
@@ -15,12 +15,12 @@ const Thanks = () => {
           className="text-center"
         >
           <Grid item xs={9} sm={12} pt={4}>
-            <p className="font-podium49 text-[32px] font-bold uppercase">
+            <p className="font-podium49 text-[32px] font-bold uppercase leading-8">
               Thanks, we’ve got your details
             </p>
           </Grid>
           <Grid item xs={8} sm={7} md={5} lg={4} xl={3} pt={2}>
-            <p className="text-base font-normal">
+            <p className="text-base font-normal leading-6 md:text-lg md:leading-8">
               We'll be in touch soon about the first drop. It's a game changer.
               It's mint.
             </p>

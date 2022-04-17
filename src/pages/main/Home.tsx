@@ -31,13 +31,13 @@ const Home = () => {
             sm={2}
             md={12}
           >
-            <div className="font-podium96 uppercase text-4xl md:text-5xl font-medium xlg:text-7xl">
+            <div className="font-podium96 uppercase text-4xl md:text-5xl font-medium xlg:text-7xl leading-8">
               This is epic
             </div>
           </Grid>
           <Grid
             item
-            className="text-center font-normal text-base"
+            className="text-center font-normal text-base md:text-2xl"
             xs={11}
             sm={12}
             md={12}
@@ -69,12 +69,12 @@ const Home = () => {
 
       <Grid container justifyContent="center" className="bg-black1 text-center">
         <Grid item xs={12} pt={4}>
-          <p className="font-podium49 text-2xl font-bold uppercase">
+          <p className="font-podium49 text-2xl md:text-4xl font-bold uppercase">
             Epic footy moments get minted
           </p>
         </Grid>
         <Grid item xs={11} sm={8} lg={6} xl={4} pt={2}>
-          <p className="text-base font-normal">
+          <p className="text-base font-normal leading-6 md:text-lg md:leading-8">
             Welcome to AFL Mint, the home of officially licensed AFL NFTs. This
             is a new era in footy collectibles. Get involved from the first
             bounce by registering for exclusive early notification of theme
