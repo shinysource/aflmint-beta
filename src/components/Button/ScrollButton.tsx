@@ -1,5 +1,3 @@
-import React, { useState } from 'react'
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
 import { Button } from '@mui/material'
 
 const ScrollButton = () => {
@@ -11,12 +9,8 @@ const ScrollButton = () => {
   }
 
   return (
-    <Button>
-      <ArrowDownwardIcon
-        onClick={scrollToTop}
-        fontSize="large"
-        className="text-white"
-      />
+    <Button onClick={scrollToTop}>
+      <img src="/public/assets/Icon/ArrowDown.svg" className="w-8" />
     </Button>
   )
 }
