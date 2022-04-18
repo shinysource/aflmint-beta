@@ -22,17 +22,17 @@ body * {
 }
 
 .signup-back {
-  @apply min-h-screen bg-no-repeat bg-cover overflow-auto bg-[url('public/backMobile.svg')] sm:bg-[url('public/back.svg')] md:bg-[url('public/back.svg')] lg:bg-[url('public/back.svg')];
+  @apply min-h-screen bg-no-repeat bg-cover overflow-auto bg-[url('/public/backMobile.svg')] sm:bg-[url('/public/back.svg')] md:bg-[url('/public/back.svg')] lg:bg-[url('/public/back.svg')];
 }
 
 .home-back {
-  @apply min-h-screen bg-no-repeat bg-cover bg-center overflow-auto bg-black2 bg-[url('public/assets/Image/Hero-mobile.svg')] sm:bg-[url('public/assets/Image/Hero.svg')] md:bg-[url('public/assets/Image/Hero.svg')] lg:bg-[url('public/assets/Image/Hero.svg')];
+  @apply min-h-screen bg-no-repeat bg-cover bg-center overflow-auto bg-black2 bg-[url('/public/assets/Image/Hero-mobile.svg')] sm:bg-[url('/public/assets/Image/Hero.svg')] md:bg-[url('/public/assets/Image/Hero.svg')] lg:bg-[url('/public/assets/Image/Hero.svg')];
 }
 
 .thanks-back {
-  @apply min-h-screen bg-no-repeat bg-cover overflow-auto  bg-none bg-black1 sm:bg-[url('public/back.svg')] md:bg-[url('public/back.svg')] lg:bg-[url('public/back.svg')];
+  @apply min-h-screen bg-no-repeat bg-cover overflow-auto  bg-none bg-black1 sm:bg-[url('/public/back.svg')] md:bg-[url('/public/back.svg')] lg:bg-[url('/public/back.svg')];
 }
 
 .footer-img {
-  @apply bg-[url('public/assets/Footer/Footer-mobile.svg')] sm:bg-[url('public/assets/Footer/Footer-mobile.svg')] md:bg-[url('public/assets/Footer/Footer-tablet.svg')] lg:bg-[url('public/assets/Footer/Footer.svg')];
+  @apply bg-[url('/public/assets/Footer/Footer-mobile.svg')] sm:bg-[url('/public/assets/Footer/Footer-mobile.svg')] md:bg-[url('/public/assets/Footer/Footer-tablet.svg')] lg:bg-[url('/public/assets/Footer/Footer.svg')];
 }

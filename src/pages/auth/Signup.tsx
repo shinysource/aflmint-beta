@@ -87,7 +87,7 @@ const Signup = () => {
   }
 
   return (
-    <Grid container justifyContent="center" className="signup-back py-9">
+    <Grid container justifyContent="center" className="py-9 signup-back">
       <Grid
         item
         container
@@ -96,7 +96,7 @@ const Signup = () => {
         justifyContent="center"
       >
         <Grid item>
-          <img src="public/assets/logo/Logo.svg"></img>
+          <img src="/public/assets/logo/Logo.svg"></img>
         </Grid>
         <Grid item className="text-[32px] font-bold text-white">
           <div className="font-podium49">SIGN UP</div>

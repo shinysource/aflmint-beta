@@ -15,7 +15,7 @@ const Footer = () => {
         className="text-center"
       >
         <Grid item xs={12} pb={2}>
-          <div className="font-podium49 uppercase font-bold text-lg">
+          <div className="font-podium49 text-lg font-bold uppercase">
             Follow us
           </div>
         </Grid>
@@ -60,9 +60,9 @@ const Footer = () => {
             component="img"
             sx={{
               content: {
-                xs: `url(public/assets/Footer/Footer-mobile.svg)`,
-                md: `url(public/assets/Footer/Footer-tablet.svg)`,
-                lg: `url(public/assets/Footer/Footer.svg)`
+                xs: `url(/public/assets/Footer/Footer-mobile.svg)`,
+                md: `url(/public/assets/Footer/Footer-tablet.svg)`,
+                lg: `url(/public/assets/Footer/Footer.svg)`
               }
             }}
             alt="Logo"
@@ -77,7 +77,7 @@ const Footer = () => {
         columnSpacing={{ xs: 100, sm: 100, md: 3 }}
         rowSpacing={{ xs: 1, md: 2 }}
         pb={4}
-        className="bg-black2 text-center pt-2"
+        className="pt-2 text-center bg-black2"
       >
         <Grid item>
           <p className="text-sm font-normal">
