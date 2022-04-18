@@ -46,7 +46,7 @@ const Home = () => {
           </Grid>
           <Grid item container justifyContent="center" xs={12}>
             <Grid item>
-              <Link to="/register">
+              <Link to="/registration">
                 <CustomButton
                   type="button"
                   model="primary"
@@ -83,7 +83,7 @@ const Home = () => {
         </Grid>
         <Grid item container justifyContent="center" xs={12} pt={2}>
           <Grid item>
-            <Link to="/signup">
+            <Link to="/registration">
               <CustomButton
                 type="button"
                 model="primary"
