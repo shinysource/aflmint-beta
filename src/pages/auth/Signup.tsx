@@ -99,7 +99,7 @@ const Signup = () => {
           <img src="/public/assets/logo/Logo.svg"></img>
         </Grid>
         <Grid item className="text-[32px] font-bold text-white">
-          <div className="font-podium49">SIGN UP</div>
+          <div className="font-podium49">SUBSCRIBE</div>
         </Grid>
       </Grid>
 
@@ -148,29 +148,11 @@ const Signup = () => {
               className="text-base font-normal text-center text-white"
               xs={12}
             >
-              <div>Already have an account</div>
+              <div className="mb-[8px]">
+                Get the latest updates and exclusive early notification of the
+                first AFL Mint drop in your inbox.{' '}
+              </div>
             </Grid>
-            <Grid item className="text-white" xs={12}>
-              <CustomButton
-                model="secondary"
-                variant="outlined"
-                name="signup"
-                label="SIGN UP WITH OKTA"
-                size="medium"
-              />
-            </Grid>
-            <Grid
-              item
-              className="text-white"
-              sx={{ marginTop: '12px' }}
-              xs={12}
-              sm={12}
-              md={12}
-              lg={12}
-            >
-              <div>Or sign up with email</div>
-            </Grid>
-
             <Grid item xs={12}>
               <FormInput
                 id="first_name"
@@ -227,8 +209,7 @@ const Signup = () => {
                 formik={formik}
                 handleChange={formik.handleChange}
                 className="font-inter text-base font-normal"
-                label="Mobile"
-                placeholder="Mobile(optional)"
+                label="Mobile (optional)"
                 prefix={mobilePrefix}
                 isHint={true}
               />
@@ -298,7 +279,7 @@ const Signup = () => {
                 type="button"
                 model="primary"
                 variant="contained"
-                label="SIGN UP"
+                label="SUBSCRIBE"
                 onClick={() => {
                   formik.handleSubmit()
                 }}
