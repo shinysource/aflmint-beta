@@ -12,7 +12,11 @@ const ScrollButton = () => {
 
   return (
     <Button>
-      <ArrowDownwardIcon onClick={scrollToTop} fontSize="large" />
+      <ArrowDownwardIcon
+        onClick={scrollToTop}
+        fontSize="large"
+        className="text-white"
+      />
     </Button>
   )
 }

@@ -8,7 +8,7 @@ import Footer from 'layout/Footer'
 
 const Home = () => {
   return (
-    <>
+    <div className="text-white">
       <Grid container className="py-10 home-back">
         <Grid item container justifyContent="center">
           <Grid item>
@@ -104,7 +104,7 @@ const Home = () => {
           <Footer />
         </Grid>
       </Grid>
-    </>
+    </div>
   )
 }
 

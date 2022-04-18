@@ -4,7 +4,7 @@ import Footer from 'layout/Footer'
 
 const Thanks = () => {
   return (
-    <Grid container className="pt-9 thanks-back">
+    <Grid container className="pt-9 text-white thanks-back">
       <Grid item container justifyContent="center">
         <Grid item>
           <Link to="/">
