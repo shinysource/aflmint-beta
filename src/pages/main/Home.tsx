@@ -12,7 +12,9 @@ const Home = () => {
       <Grid container className="py-10 home-back">
         <Grid item container justifyContent="center">
           <Grid item>
-            <img src="/public/assets/logo/Logo.svg"></img>
+            <Link to="/">
+              <img src="/public/assets/logo/Logo.svg"></img>
+            </Link>
           </Grid>
         </Grid>
 
