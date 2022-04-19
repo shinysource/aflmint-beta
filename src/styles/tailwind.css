@@ -4,13 +4,13 @@
 
 @font-face {
   font-family: 'PODIUMSharp-49';
-  src: url('/public/webFonts/PODIUMSharp49/font.woff2') format('woff2'),
-    url('/public/webFonts/PODIUMSharp49/font.woff') format('woff');
+  src: url('/webFonts/PODIUMSharp49/font.woff2') format('woff2'),
+    url('/webFonts/PODIUMSharp49/font.woff') format('woff');
 }
 @font-face {
   font-family: 'PODIUMSharp-96';
-  src: url('/public/webFonts/PODIUMSharp96/font.woff2') format('woff2'),
-    url('/public/webFonts/PODIUMSharp96/font.woff') format('woff');
+  src: url('/webFonts/PODIUMSharp96/font.woff2') format('woff2'),
+    url('/webFonts/PODIUMSharp96/font.woff') format('woff');
 }
 
 @tailwind base;
@@ -22,19 +22,19 @@ body * {
 }
 
 .signup-back {
-  @apply min-h-screen bg-no-repeat bg-cover overflow-auto bg-black1 bg-[url('/public/backMobile.svg')] sm:bg-[url('/public/back.svg')] md:bg-[url('/public/back.svg')] lg:bg-[url('/public/back.svg')];
+  @apply min-h-screen bg-no-repeat bg-cover overflow-auto bg-black1 bg-[url('/backMobile.svg')] sm:bg-[url('/back.svg')] md:bg-[url('/back.svg')] lg:bg-[url('/back.svg')];
 }
 
 .home-back {
-  @apply min-h-screen bg-no-repeat bg-cover bg-center overflow-auto bg-black2 bg-[url('/public/assets/Image/Hero-mobile.svg')] sm:bg-[url('/public/assets/Image/Hero.svg')] md:bg-[url('/public/assets/Image/Hero.svg')] lg:bg-[url('/public/assets/Image/Hero.svg')];
+  @apply min-h-screen bg-no-repeat bg-cover bg-center overflow-auto bg-black2 bg-[url('/assets/Image/Hero-mobile.svg')] sm:bg-[url('/assets/Image/Hero.svg')] md:bg-[url('/assets/Image/Hero.svg')] lg:bg-[url('/assets/Image/Hero.svg')];
 }
 
 .thanks-back {
-  @apply min-h-screen bg-no-repeat bg-cover overflow-auto  bg-none bg-black1 sm:bg-[url('/public/back.svg')] md:bg-[url('/public/back.svg')] lg:bg-[url('/public/back.svg')];
+  @apply min-h-screen bg-no-repeat bg-cover overflow-auto  bg-none bg-black1 sm:bg-[url('/back.svg')] md:bg-[url('/back.svg')] lg:bg-[url('/back.svg')];
 }
 
 .footer-img {
-  @apply bg-[url('/public/assets/Footer/Footer-mobile.svg')] sm:bg-[url('/public/assets/Footer/Footer-mobile.svg')] md:bg-[url('/public/assets/Footer/Footer-tablet.svg')] lg:bg-[url('/public/assets/Footer/Footer.svg')];
+  @apply bg-[url('/assets/Footer/Footer-mobile.svg')] sm:bg-[url('/assets/Footer/Footer-mobile.svg')] md:bg-[url('/assets/Footer/Footer-tablet.svg')] lg:bg-[url('/assets/Footer/Footer.svg')];
 }
 
 .hero-text {

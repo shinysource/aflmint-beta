@@ -13,7 +13,7 @@ const Home = () => {
         <Grid item container justifyContent="center">
           <Grid item>
             <Link to="/">
-              <img src="/public/assets/logo/Logo.svg"></img>
+              <img src="/assets/logo/Logo.svg"></img>
             </Link>
           </Grid>
         </Grid>
