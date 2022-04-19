@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import CustomButton from 'components/Button/CustomButton'
 import ScrollButton from 'components/Button/ScrollButton'
 import Footer from 'layout/Footer'
+import { ArrowAnim } from '../../components/Animations/Animations'
 
 const Home = () => {
   return (
@@ -45,7 +46,7 @@ const Home = () => {
               </ul>
             </div>
           </div>
-          <div className="summary-text">AFL NFTs are coming.</div>
+          <div className="summary-text pt-2">AFL NFTs are coming.</div>
           <div className="py-2 md:py-4 lg:py-4">
             <Link to="/registration">
               <CustomButton
@@ -60,16 +61,14 @@ const Home = () => {
           </div>
         </Grid>
 
-        <Grid item container justifyContent="center" alignItems="end">
-          <Grid item>
-            <ScrollButton />
-          </Grid>
+        <Grid container alignItems="flex-end">
+          <ArrowAnim />
         </Grid>
       </Grid>
 
       <Grid container justifyContent="center" className="text-center bg-black1">
         <Grid item xs={12} pt={4}>
-          <p className="h2-text">Epic footy moments get minted</p>
+          <p className="h2-text">EPIC FOOTY MOMENTS GET MINTED</p>
         </Grid>
         <Grid item xs={11} sm={8} lg={6} xl={4} pt={2}>
           <p className="paragraph-text">

@@ -11,8 +11,7 @@ const Footer = () => {
         item
         container
         justifyContent="center"
-        py={6}
-        className="text-center"
+        className="text-center pt-16 pb-8"
       >
         <Grid item xs={12} pb={2}>
           <div className="h3-text">Follow us</div>
@@ -54,24 +53,13 @@ const Footer = () => {
         </Grid>
       </Grid>
 
-      <Grid
-        item
-        container
-        justifyContent="center"
-        pb={{ xs: 1, md: 2 }}
-        className="bg-black1"
-      >
+      <Grid item container justifyContent="center" pb={{ xs: 1, md: 2 }}>
         <Grid item>
-          <Box
-            component="img"
-            sx={{
-              content: {
-                xs: `url(/assets/Footer/Footer-mobile.svg)`,
-                md: `url(/assets/Footer/Footer-tablet.svg)`,
-                lg: `url(/assets/Footer/Footer.svg)`
-              }
-            }}
-            alt="Logo"
+          <img
+            style={{ height: '45px' }}
+            className="mb-8"
+            src="/assets/Footer/Flow-Footer.png"
+            alt="Built on Flow"
           />
         </Grid>
       </Grid>
