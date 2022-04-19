@@ -1,1 +1,1 @@
-declare module 'country-data';
+declare module 'country-data'

@@ -3,6 +3,7 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { Grid } from '@mui/material'
 import { SelectChangeEvent } from '@mui/material/Select'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 import FormInput from '../../components/Fields/FormInput'
 import FormCheck from '../../components/Fields/FormCheck'
@@ -264,10 +265,10 @@ const Signup = () => {
               />
             </Grid>
             <Grid item>
-              <div
-                className="g-recaptcha"
-                data-sitekey="6Lc4L04fAAAAAF9IwSc0wmC4B-Ay1pcc6sfOFy89"
-              ></div>
+              <ReCAPTCHA
+                sitekey="6Lc4L04fAAAAAF9IwSc0wmC4B-Ay1pcc6sfOFy89"
+                theme="dark"
+              />
             </Grid>
 
             <Grid item xs={12}>
