@@ -92,7 +92,7 @@ const Footer = () => {
           <p className="fineprint-text">
             <a
               className="hover:text-transparent underline bg-clip-text bg-gradient-to-r from-gradient1 to-gradient2"
-              href=" https://media.telstra.com.au/terms-of-use.html?ref=Net-Footer-Corp-Terms"
+              href="https://www.afl.com.au/privacy"
               target="_blank"
             >
               Terms of use
