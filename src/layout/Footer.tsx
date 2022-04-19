@@ -12,7 +12,7 @@ const Footer = () => {
         <Grid item xs={12} pb={2}>
           <div className="h3-text">FOLLOW US</div>
         </Grid>
-        <Grid item container justifyContent="center" columnSpacing={4} xs={12}>          
+        <Grid item container justifyContent="center" columnSpacing={4} xs={12}>
           <Grid item sx={{ py: '5px' }}>
             <a href="https://twitter.com/aflmint">
               <img
@@ -27,14 +27,27 @@ const Footer = () => {
             </a>
           </Grid>
           <Grid item sx={{ py: '5px' }}>
-            <a href="https://discord.com/invite/hnJakyPd">
+            <a href="https://discord.com/invite/hnJakyPd" className="">
               <img
                 src="/assets/Icon/Discord-light.svg"
-                onMouseOver={(e) =>
-                  (e.currentTarget.src = '/assets/Icon/Discord-hover.svg')
-                }
+                onMouseOver={(e) => {
+                  e.currentTarget.src = '/assets/Icon/Discord-hover.svg'
+                }}
                 onMouseOut={(e) =>
                   (e.currentTarget.src = '/assets/Icon/Discord-light.svg')
+                }
+              />
+            </a>
+          </Grid>
+          <Grid item sx={{ py: '5px' }}>
+            <a href="https://www.instagram.com/aflmint/">
+              <img
+                src="/assets/Icon/Instagram-light.svg"
+                onMouseOver={(e) =>
+                  (e.currentTarget.src = '/assets/Icon/Instagram-hover.svg')
+                }
+                onMouseOut={(e) =>
+                  (e.currentTarget.src = '/assets/Icon/Instagram-light.svg')
                 }
               />
             </a>
@@ -51,7 +64,7 @@ const Footer = () => {
                 }
               />
             </a>
-          </Grid>        
+          </Grid>
         </Grid>
       </Grid>
 
