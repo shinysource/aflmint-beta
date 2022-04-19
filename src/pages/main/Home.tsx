@@ -19,47 +19,45 @@ const Home = () => {
         </Grid>
 
         <Grid
-          item
           container
+          direction="column"
           justifyContent="center"
           alignItems="center"
-          py={16}
-          columns={{ xs: 7, sm: 11, md: 12, lg: 12 }}
         >
-          <Grid
-            item
-            className="text-4xl font-normal text-center"
-            xs={2}
-            sm={2}
-            md={12}
-          >
-            <div className="font-podium96 text-4xl xlg:text-7xl font-medium leading-8 uppercase md:text-5xl">
-              This is epic
+          <div className="text-animate-content text-4xl font-normal text-center py-2 md:py-4 lg:py-4 w-[100%] sm:w-[100%] md:w-full lg:w-full">
+            <div className="text-animate-content-container">
+              <ul className="text-animate-content-container-list">
+                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[32%] sm:w-[20%] md:w-[15%] lg:w-full">
+                  This is epic
+                </li>
+                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[45%] sm:w-[30%] md:w-[20%] lg:w-full">
+                  Year after year
+                </li>
+                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[45%] sm:w-[30%] md:w-[20%] lg:w-full">
+                  Game after game
+                </li>
+                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[45%] sm:w-[30%] md:w-[20%] lg:w-full">
+                  Drop after drop
+                </li>
+                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[57%] sm:w-[40%] md:w-[30%] lg:w-full">
+                  The ultimate collection
+                </li>
+              </ul>
             </div>
-          </Grid>
-          <Grid
-            item
-            className="text-base font-normal text-center md:text-2xl"
-            xs={11}
-            sm={12}
-            md={12}
-          >
-            <div>AFL NFTs are coming.</div>
-          </Grid>
-          <Grid item container justifyContent="center" xs={12}>
-            <Grid item>
-              <Link to="/registration">
-                <CustomButton
-                  type="button"
-                  model="primary"
-                  variant="contained"
-                  label="NOTIFY ME"
-                  className="w-36 uppercase"
-                  endIcon={<ArrowForwardIosIcon sx={{ color: '#D3D3D3' }} />}
-                />
-              </Link>
-            </Grid>
-          </Grid>
+          </div>
+          <div className="summary-text">AFL NFTs are coming.</div>
+          <div className="py-2 md:py-4 lg:py-4">
+            <Link to="/registration">
+              <CustomButton
+                type="button"
+                model="primary"
+                variant="contained"
+                label="NOTIFY ME"
+                className="w-36 uppercase"
+                endIcon={<ArrowForwardIosIcon sx={{ color: '#D3D3D3' }} />}
+              />
+            </Link>
+          </div>
         </Grid>
 
         <Grid item container justifyContent="center" alignItems="end">
@@ -71,12 +69,10 @@ const Home = () => {
 
       <Grid container justifyContent="center" className="text-center bg-black1">
         <Grid item xs={12} pt={4}>
-          <p className="font-podium49 text-2xl font-bold uppercase md:text-4xl">
-            Epic footy moments get minted
-          </p>
+          <p className="h2-text">Epic footy moments get minted</p>
         </Grid>
         <Grid item xs={11} sm={8} lg={6} xl={4} pt={2}>
-          <p className="text-base font-normal leading-6 md:text-lg md:leading-8">
+          <p className="paragraph-text">
             Welcome to AFL Mint, the home of officially licensed AFL NFTs. This
             is a new era in footy collectibles. Get involved from the first
             bounce by registering for exclusive early notification of theme
