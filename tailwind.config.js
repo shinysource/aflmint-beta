@@ -8,11 +8,11 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'xs': '0px',
-        'sm': '600px',
-        'md': '900px',
-        'lg': '1200px',
-        'xl': '1536px'
+        xs: '0px',
+        sm: '600px',
+        md: '900px',
+        lg: '1200px',
+        xl: '1536px'
       },
       fontFamily: {
         inter: 'Inter',
@@ -23,6 +23,8 @@ module.exports = {
         white: '#ffffff'
       },
       colors: {
+        gradient1: '#086BDF',
+        gradient2: '#7381FC',
         black1: '#070707',
         black2: '#1A1A1A',
         grey: '#A6A6A6',

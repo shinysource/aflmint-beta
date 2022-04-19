@@ -1,8 +1,4 @@
 import { Grid, Box } from '@mui/material'
-import TwitterIcon from '@mui/icons-material/Twitter'
-import YouTubeIcon from '@mui/icons-material/YouTube'
-import InstagramIcon from '@mui/icons-material/Instagram'
-import FacebookIcon from '@mui/icons-material/Facebook'
 
 const Footer = () => {
   return (
@@ -16,10 +12,18 @@ const Footer = () => {
         <Grid item xs={12} pb={2}>
           <div className="h3-text">FOLLOW US</div>
         </Grid>
-        <Grid item container justifyContent="center" columnSpacing={2} xs={12}>
-          <Grid item>
+        <Grid item container justifyContent="center" columnSpacing={4} xs={12}>
+          <Grid item sx={{ py: '5px' }}>
             <a href="https://twitter.com/aflmint">
-              <TwitterIcon fontSize="large" className="hover:text-grey3" />
+              <img
+                src="/assets/Icon/Twitter-light.svg"
+                onMouseOver={(e) =>
+                  (e.currentTarget.src = '/assets/Icon/Twitter-hover.svg')
+                }
+                onMouseOut={(e) =>
+                  (e.currentTarget.src = '/assets/Icon/Twitter-light.svg')
+                }
+              />
             </a>
           </Grid>
           <Grid item sx={{ py: '5px' }}>
@@ -35,14 +39,17 @@ const Footer = () => {
               />
             </a>
           </Grid>
-          <Grid item>
-            <a href="https://www.instagram.com/aflmint">
-              <InstagramIcon fontSize="large" className="hover:text-grey3" />
-            </a>
-          </Grid>
-          <Grid item>
+          <Grid item sx={{ py: '5px' }}>
             <a href="https://facebook.com/aflmint">
-              <FacebookIcon fontSize="large" className="hover:text-grey3" />
+              <img
+                src="/assets/Icon/Facebook-light.svg"
+                onMouseOver={(e) =>
+                  (e.currentTarget.src = '/assets/Icon/Facebook-hover.svg')
+                }
+                onMouseOut={(e) =>
+                  (e.currentTarget.src = '/assets/Icon/Facebook-light.svg')
+                }
+              />
             </a>
           </Grid>
         </Grid>
@@ -71,7 +78,7 @@ const Footer = () => {
         <Grid item>
           <p className="fineprint-text">
             <a
-              className="underline"
+              className="hover:text-transparent underline bg-clip-text bg-gradient-to-r from-gradient1 to-gradient2"
               href=" https://media.telstra.com.au/terms-of-use.html?ref=Net-Footer-Corp-Terms"
               target="_blank"
             >
@@ -82,7 +89,7 @@ const Footer = () => {
         <Grid item>
           <p className="fineprint-text">
             <a
-              className="underline"
+              className="hover:text-transparent underline bg-clip-text bg-gradient-to-r from-gradient1 to-gradient2"
               href="https://www.afl.com.au/privacy"
               target="_blank"
               rel="noreferrer"
