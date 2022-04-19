@@ -11,7 +11,7 @@ const Footer = () => {
         item
         container
         justifyContent="center"
-        className="text-center pt-16 pb-8"
+        className="pt-16 pb-8 text-center"
       >
         <Grid item xs={12} pb={2}>
           <div className="h3-text">FOLLOW US</div>
@@ -20,11 +20,6 @@ const Footer = () => {
           <Grid item>
             <a href="https://twitter.com/aflmint">
               <TwitterIcon fontSize="large" className="hover:text-grey3" />
-            </a>
-          </Grid>
-          <Grid item>
-            <a href="https://youtube.com/aflmint">
-              <YouTubeIcon fontSize="large" className="hover:text-grey3" />
             </a>
           </Grid>
           <Grid item sx={{ py: '5px' }}>
@@ -41,7 +36,7 @@ const Footer = () => {
             </a>
           </Grid>
           <Grid item>
-            <a href="https://instagram.com/aflmint">
+            <a href="https://www.instagram.com/aflmint">
               <InstagramIcon fontSize="large" className="hover:text-grey3" />
             </a>
           </Grid>
