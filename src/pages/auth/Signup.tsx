@@ -25,11 +25,7 @@ const validationSchema = Yup.object().shape({
     )
     .max(10, 'number less than 10')
     .notRequired(),
-  acceptTerms: Yup.bool().oneOf([true], 'Accept the privacy terms to continue'),
-  acceptReceive: Yup.bool().oneOf(
-    [true],
-    'Accept the receive from AFL and AFL partners to continue'
-  )
+  acceptTerms: Yup.bool().oneOf([true], 'Accept the privacy terms to continue')
 })
 
 interface RegisterForm {
