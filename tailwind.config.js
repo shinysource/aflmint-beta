@@ -7,6 +7,13 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      screens: {
+        'xs': '0px',
+        'sm': '600px',
+        'md': '900px',
+        'lg': '1200px',
+        'xl': '1536px'
+      },
       fontFamily: {
         inter: 'Inter',
         podium49: 'PODIUMSharp-49',
@@ -17,8 +24,8 @@ module.exports = {
       },
       colors: {
         black1: '#070707',
-        grey: '#A6A6A6',
         black2: '#1A1A1A',
+        grey: '#A6A6A6',
         grey3: '#D3D3D3',
         light: '#8E8E93',
         white: '#ffffff',
