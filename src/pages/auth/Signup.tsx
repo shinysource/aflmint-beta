@@ -192,6 +192,7 @@ const Signup = () => {
             </Grid>
             <Grid item xs={12}>
               <FormSelect
+                id="country"
                 name="country"
                 options={countries}
                 preferredOptions={preferredCountries}

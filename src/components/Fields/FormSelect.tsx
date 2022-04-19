@@ -38,6 +38,7 @@ interface FormSelectProps {
   options: Option[]
   preferredOptions: Option[]
   className?: string
+  id?: string
   label?: string
   placeholder?: string
   handleChange?: (evt: SelectChangeEvent) => void
