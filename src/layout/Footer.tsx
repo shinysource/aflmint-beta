@@ -15,34 +15,42 @@ const Footer = () => {
         className="text-center"
       >
         <Grid item xs={12} pb={2}>
-          <div className="font-podium49 text-lg font-bold uppercase">
-            Follow us
-          </div>
+          <div className="h3-text">Follow us</div>
         </Grid>
         <Grid item container justifyContent="center" columnSpacing={2} xs={12}>
           <Grid item>
             <a href="https://twitter.com/aflmint">
-              <TwitterIcon fontSize="large" />
+              <TwitterIcon fontSize="large" className="hover:text-grey3" />
             </a>
           </Grid>
           <Grid item>
             <a href="https://youtube.com/aflmint">
-              <YouTubeIcon fontSize="large" />
+              <YouTubeIcon fontSize="large" className="hover:text-grey3" />
             </a>
           </Grid>
           <Grid item sx={{ py: '5px' }}>
             <a href="https://discord.com/aflmint">
-              <img src="/public/assets/Icon/Discord-light.svg" />
+              <img
+                src="/public/assets/Icon/Discord-light.svg"
+                onMouseOver={(e) =>
+                  (e.currentTarget.src =
+                    '/public/assets/Icon/Discord-hover.svg')
+                }
+                onMouseOut={(e) =>
+                  (e.currentTarget.src =
+                    '/public/assets/Icon/Discord-light.svg')
+                }
+              />
             </a>
           </Grid>
           <Grid item>
             <a href="https://instagram.com/aflmint">
-              <InstagramIcon fontSize="large" />
+              <InstagramIcon fontSize="large" className="hover:text-grey3" />
             </a>
           </Grid>
           <Grid item>
             <a href="https://facebook.com/aflmint">
-              <FacebookIcon fontSize="large" />
+              <FacebookIcon fontSize="large" className="hover:text-grey3" />
             </a>
           </Grid>
         </Grid>
@@ -80,7 +88,7 @@ const Footer = () => {
         className="pt-2 text-center bg-black2"
       >
         <Grid item>
-          <p className="text-sm font-normal">
+          <p className="fineprint-text">
             <a
               className="underline"
               href=" https://media.telstra.com.au/terms-of-use.html?ref=Net-Footer-Corp-Terms"
@@ -91,7 +99,7 @@ const Footer = () => {
           </p>
         </Grid>
         <Grid item>
-          <p className="text-sm font-normal">
+          <p className="fineprint-text">
             <a
               className="underline"
               href="https://www.afl.com.au/privacy"
@@ -103,7 +111,7 @@ const Footer = () => {
           </p>
         </Grid>
         <Grid item>
-          <p className="text-sm font-normal">
+          <p className="fineprint-text">
             Copyright @2022 AFL. All Rights Reserved
           </p>
         </Grid>
