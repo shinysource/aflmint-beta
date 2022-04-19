@@ -62,7 +62,7 @@ body * {
 }
 
 .h3-text {
-  @apply font-podium49 font-bold text-[18px] leading-6 lg:text-2xl lg:leading-8 xl:text-4xl xl:leading-9;
+  @apply font-podium49 font-bold text-[18px] leading-6 lg:text-2xl lg:leading-8;
 }
 
 .text-animate-content {

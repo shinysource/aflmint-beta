@@ -14,7 +14,7 @@ const Footer = () => {
         className="text-center pt-16 pb-8"
       >
         <Grid item xs={12} pb={2}>
-          <div className="h3-text">Follow us</div>
+          <div className="h3-text">FOLLOW US</div>
         </Grid>
         <Grid item container justifyContent="center" columnSpacing={2} xs={12}>
           <Grid item>
