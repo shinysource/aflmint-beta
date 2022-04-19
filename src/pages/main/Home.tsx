@@ -13,7 +13,7 @@ const Home = () => {
         <Grid item container justifyContent="center">
           <Grid item>
             <Link to="/">
-              <img src="/public/assets/logo/Logo.svg"></img>
+              <img src="/assets/logo/Logo.svg"></img>
             </Link>
           </Grid>
         </Grid>
@@ -24,22 +24,22 @@ const Home = () => {
           justifyContent="center"
           alignItems="center"
         >
-          <div className="text-animate-content text-4xl font-normal text-center py-2 md:py-4 lg:py-4 w-[100%] sm:w-[100%] md:w-full lg:w-full">
+          <div className="text-animate-content text-4xl font-normal text-center py-2 md:py-4 lg:py-4 w-full sm:w-full md:w-full lg:w-full">
             <div className="text-animate-content-container">
               <ul className="text-animate-content-container-list">
-                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[180px] sm:w-[20%] md:w-[160px] lg:w-full">
+                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[180px] sm:w-[160px] lg:w-full">
                   This is epic
                 </li>
-                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[270px] sm:w-[30%] md:w-[240px] lg:w-full">
+                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[270px] sm:w-[240px] lg:w-full">
                   Year after year
                 </li>
-                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[270px] sm:w-[30%] md:w-[240px] lg:w-full">
+                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[270px] sm:w-[240px] lg:w-full">
                   Game after game
                 </li>
-                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[270px] sm:w-[30%] md:w-[240px] lg:w-full">
+                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[270px] sm:w-[240px] lg:w-full">
                   Drop after drop
                 </li>
-                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[350px] sm:w-[40%] md:w-[360px] lg:w-full">
+                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[350px] sm:w-[360px] lg:w-full">
                   The ultimate collection
                 </li>
               </ul>
