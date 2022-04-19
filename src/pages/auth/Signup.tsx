@@ -52,7 +52,7 @@ const Signup = () => {
   const [mobilePrefix, setMobilePrefix] = useState('')
   const formRef = useRef<HTMLFormElement>(null)
   const { countries, preferredCountries } = useCountrySelect()
-  // const retURL = useMemo(() => `${window.location.origin}/thank-you`, [window])
+  const retURL = useMemo(() => `${window.location.origin}/thank-you`, [window])
   // const salesforceURL = (import.meta.env.VITE_SALESFORCE_URL || '').toString()
 
   const formik = useFormik({
@@ -112,11 +112,7 @@ const Signup = () => {
             value='{"keyname":"WebToLead_EOI_NFT","fallback":"true","orgId":"00D5g000004G9rE","ts":""}'
           />
           <input type="hidden" name="oid" value="00D5g000004G9rE" />
-          <input
-            type="hidden"
-            name="retURL"
-            value="http://aflmint.com.au/thank-you"
-          />
+          <input type="hidden" name="retURL" value={retURL} />
           <input
             type="hidden"
             name="00N5g00000GRcv9"
