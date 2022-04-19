@@ -31,14 +31,12 @@ const Footer = () => {
           <Grid item sx={{ py: '5px' }}>
             <a href="https://discord.com/aflmint">
               <img
-                src="/public/assets/Icon/Discord-light.svg"
+                src="/assets/Icon/Discord-light.svg"
                 onMouseOver={(e) =>
-                  (e.currentTarget.src =
-                    '/public/assets/Icon/Discord-hover.svg')
+                  (e.currentTarget.src = '/assets/Icon/Discord-hover.svg')
                 }
                 onMouseOut={(e) =>
-                  (e.currentTarget.src =
-                    '/public/assets/Icon/Discord-light.svg')
+                  (e.currentTarget.src = '/assets/Icon/Discord-light.svg')
                 }
               />
             </a>
@@ -68,9 +66,9 @@ const Footer = () => {
             component="img"
             sx={{
               content: {
-                xs: `url(/public/assets/Footer/Footer-mobile.svg)`,
-                md: `url(/public/assets/Footer/Footer-tablet.svg)`,
-                lg: `url(/public/assets/Footer/Footer.svg)`
+                xs: `url(/assets/Footer/Footer-mobile.svg)`,
+                md: `url(/assets/Footer/Footer-tablet.svg)`,
+                lg: `url(/assets/Footer/Footer.svg)`
               }
             }}
             alt="Logo"
