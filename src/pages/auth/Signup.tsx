@@ -52,8 +52,8 @@ const Signup = () => {
   const [mobilePrefix, setMobilePrefix] = useState('')
   const formRef = useRef<HTMLFormElement>(null)
   const { countries, preferredCountries } = useCountrySelect()
-  const retURL = useMemo(() => `${window.location.origin}/thank-you`, [window])
-  const salesforceURL = (import.meta.env.VITE_SALESFORCE_URL || '').toString()
+  // const retURL = useMemo(() => `${window.location.origin}/thank-you`, [window])
+  // const salesforceURL = (import.meta.env.VITE_SALESFORCE_URL || '').toString()
 
   const formik = useFormik({
     initialValues,
@@ -101,7 +101,7 @@ const Signup = () => {
 
       <Grid item>
         <form
-          action={salesforceURL}
+          action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8"
           method="POST"
           className="flex justify-center"
           ref={formRef}
@@ -109,10 +109,14 @@ const Signup = () => {
           <input
             type="hidden"
             name="captcha_settings"
-            value='{"keyname":"WebToLead_EOI_NFT","fallback":"true","orgId":"00D9D0000000W3o","ts":""}'
+            value='{"keyname":"WebToLead_EOI_NFT","fallback":"true","orgId":"00D5g000004G9rE","ts":""}'
           />
-          <input type="hidden" name="oid" value="00D9D0000000W3o" />
-          <input type="hidden" name="retURL" value={retURL} />
+          <input type="hidden" name="oid" value="00D5g000004G9rE" />
+          <input
+            type="hidden"
+            name="retURL"
+            value="http://aflmint.com.au/thank-you"
+          />
           <input
             type="hidden"
             name="00N5g00000GRcv9"
@@ -123,9 +127,9 @@ const Signup = () => {
             type="hidden"
             name="recordType"
             id="recordType"
-            value="0129D000001FuwI"
+            value="0125g000000mev8"
           />
-          <input type="hidden" name="Campaign_ID" value="7019D0000002k1lQAA" />
+          <input type="hidden" name="Campaign_ID" value="7015g000000U9b5AAC" />
           <input type="hidden" name="member_status" value="Received" />
           <input type="hidden" name="lead_source" value="Website" />
           <Grid
@@ -265,7 +269,6 @@ const Signup = () => {
             <Grid item>
               <div
                 className="g-recaptcha"
-                data-theme="dark"
                 data-sitekey="6Lc4L04fAAAAAF9IwSc0wmC4B-Ay1pcc6sfOFy89"
               ></div>
             </Grid>
