@@ -74,7 +74,7 @@ const Home = () => {
           <p className="paragraph-text">
             Welcome to AFL Mint, the home of officially licensed AFL NFTs. This
             is a new era in footy collectibles. Get involved from the first
-            bounce by registering for exclusive early notification of theme
+            bounce by registering for exclusive early notification of the
             inaugural drop. It&apos;s mint.
           </p>
         </Grid>
