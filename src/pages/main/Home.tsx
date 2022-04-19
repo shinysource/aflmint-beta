@@ -25,22 +25,22 @@ const Home = () => {
           justifyContent="center"
           alignItems="center"
         >
-          <div className="text-animate-content text-4xl font-normal text-center py-2 md:py-4 lg:py-4 w-[100%] sm:w-[100%] md:w-full lg:w-full">
+          <div className="text-animate-content text-4xl font-normal text-center py-2 md:py-4 lg:py-4 w-full sm:w-full md:w-full lg:w-full">
             <div className="text-animate-content-container">
               <ul className="text-animate-content-container-list">
-                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[32%] sm:w-[20%] md:w-[15%] lg:w-full">
+                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[180px] sm:w-[160px] lg:w-full">
                   This is epic
                 </li>
-                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[45%] sm:w-[30%] md:w-[20%] lg:w-full">
+                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[270px] sm:w-[240px] lg:w-full">
                   Year after year
                 </li>
-                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[45%] sm:w-[30%] md:w-[20%] lg:w-full">
+                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[270px] sm:w-[240px] lg:w-full">
                   Game after game
                 </li>
-                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[45%] sm:w-[30%] md:w-[20%] lg:w-full">
+                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[270px] sm:w-[240px] lg:w-full">
                   Drop after drop
                 </li>
-                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[57%] sm:w-[40%] md:w-[30%] lg:w-full">
+                <li className="hero-text text-animate-content-container-list-item uppercase mx-auto w-[350px] sm:w-[360px] lg:w-full">
                   The ultimate collection
                 </li>
               </ul>
