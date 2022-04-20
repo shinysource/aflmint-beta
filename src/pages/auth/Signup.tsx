@@ -1,4 +1,4 @@
-import { useState, useRef, useMemo } from 'react'
+import { useState, useRef, useMemo, useEffect } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { Grid } from '@mui/material'
@@ -54,7 +54,14 @@ const Signup = () => {
   const formRef = useRef<HTMLFormElement>(null)
   const { countries, preferredCountries } = useCountrySelect()
   const retURL = useMemo(() => `${window.location.origin}/thank-you`, [window])
+  const [token, setToken] = useState('')
+  const [tokenError, setTokenError] = useState(false)
   // const salesforceURL = (import.meta.env.VITE_SALESFORCE_URL || '').toString()
+
+  const onCaptchaChange = (value: string | null) => {
+    setToken(value || '')
+    setTokenError(!!token)
+  }
 
   const formik = useFormik({
     initialValues,
@@ -62,6 +69,21 @@ const Signup = () => {
     onSubmit: (values, actions) => {
       formik.setFieldValue('acceptTerms', false)
       formik.setFieldValue('acceptReceive', false)
+      const response: HTMLInputElement | null = document.getElementById(
+        'g-recaptcha-response'
+      ) as HTMLInputElement | null
+      if (response == null || response.value.trim() == '') {
+        const element = document.getElementsByName(
+          'captcha_settings'
+        )[0] as HTMLInputElement
+        const elems = JSON.parse(element.value)
+        elems['ts'] = JSON.stringify(new Date().getTime())
+        element.value = JSON.stringify(elems)
+      }
+      if (!token) {
+        setTokenError(true)
+        return
+      }
       formRef.current?.submit()
       actions.resetForm()
     }
@@ -266,8 +288,10 @@ const Signup = () => {
             </Grid>
             <Grid item>
               <ReCAPTCHA
+                className="g-recaptcha"
                 sitekey="6Lc4L04fAAAAAF9IwSc0wmC4B-Ay1pcc6sfOFy89"
                 theme="dark"
+                onChange={onCaptchaChange}
               />
             </Grid>
 

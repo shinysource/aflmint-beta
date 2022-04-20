@@ -94,6 +94,7 @@ const Footer = () => {
               className="hover:text-transparent underline bg-clip-text bg-gradient-to-r from-gradient1 to-gradient2"
               href="https://www.afl.com.au/privacy"
               target="_blank"
+              rel="noreferrer"
             >
               Terms of use
             </a>
