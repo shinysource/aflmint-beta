@@ -72,15 +72,13 @@ const Signup = () => {
       const response: HTMLInputElement | null = document.getElementById(
         'g-recaptcha-response'
       ) as HTMLInputElement | null
-      if (response == null || response.value.trim() == '') {
-        const element = document.getElementsByName(
-          'captcha_settings'
-        )[0] as HTMLInputElement
-        const elems = JSON.parse(element.value)
-        elems['ts'] = JSON.stringify(new Date().getTime())
-        element.value = JSON.stringify(elems)
-        console.log(elems)
-      }
+      const element = document.getElementsByName(
+        'captcha_settings'
+      )[0] as HTMLInputElement
+      const elems = JSON.parse(element.value)
+      elems['ts'] = JSON.stringify(new Date().getTime())
+      element.value = JSON.stringify(elems)
+      console.log(elems)
       if (!token) {
         setTokenError(true)
         return
