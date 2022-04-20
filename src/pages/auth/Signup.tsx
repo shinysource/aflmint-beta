@@ -240,12 +240,8 @@ const Signup = () => {
                 label={
                   <div className=" text-sm text-grey">
                     <p>
-                      I agree to the{' '}
-                      <Link to="/privacy-terms-policy" className="underline">
-                        terms
-                      </Link>{' '}
-                      and conditions of the{' '}
-                      <Link to="/privacy-terms-policy" className="underline">
+                      I agree to the terms and conditions of the
+                      <Link to="/privacy-policy" className="underline">
                         AFL Privacy Policy
                       </Link>{' '}
                       and to receiving communications in relation to AFL Mint

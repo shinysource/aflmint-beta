@@ -1,6 +1,5 @@
 import { Grid } from '@mui/material'
 import { Link } from 'react-router-dom'
-import Footer from 'layout/Footer'
 
 const Terms = () => {
   return (
@@ -76,7 +75,7 @@ const Terms = () => {
 
           <Grid container className="justify-center pb-10">
             <Grid item className="text-left w-4/5">
-              <p className="text-lg font-bold leading-10">3. Your Conduct</p>
+              <p className="text-xl font-bold leading-10">3. Your Conduct</p>
               <div className="flex pl-5">
                 (a)
                 <p className="text-base font-normal leading-6 pl-3 pb-3 md:text-lg md:leading-7">
@@ -94,20 +93,21 @@ const Terms = () => {
                 (b)
                 <p className="text-base font-normal leading-6 pl-3 pb-3 md:text-lg md:leading-7">
                   You may be permitted to submit, post, transmit or otherwise
-                  make content available via the Website (Your Content). If you
-                  do so, you grant to the AFL, a non-exclusive, irrevocable,
-                  perpetual, worldwide, royalty-free, transferable licence to
-                  use, reproduce, modify, adapt, publish or communicate to the
-                  public Your Content for the reasonable purposes of the
-                  AFL&apos;s business, and the right to sub-license those rights
-                  to others, subject to the terms and conditions of the AFL
-                  Privacy Policy. You warrant that you have the right to grant
-                  this licence, that AFL&apos;s exercise of the licence rights
-                  will not infringe the intellectual property rights of any
-                  person, and that Your Content is not defamatory and does not
-                  breach any law. The AFL may monitor or review Your Content,
-                  but the AFL is not obliged to do so. The AFL may also alter or
-                  remove any of Your Content at any time.
+                  make content available via the Website (
+                  <strong>Your Content</strong>). If you do so, you grant to the
+                  AFL, a non-exclusive, irrevocable, perpetual, worldwide,
+                  royalty-free, transferable licence to use, reproduce, modify,
+                  adapt, publish or communicate to the public Your Content for
+                  the reasonable purposes of the AFL&apos;s business, and the
+                  right to sub-license those rights to others, subject to the
+                  terms and conditions of the AFL Privacy Policy. You warrant
+                  that you have the right to grant this licence, that AFL&apos;s
+                  exercise of the licence rights will not infringe the
+                  intellectual property rights of any person, and that Your
+                  Content is not defamatory and does not breach any law. The AFL
+                  may monitor or review Your Content, but the AFL is not obliged
+                  to do so. The AFL may also alter or remove any of Your Content
+                  at any time.
                 </p>
               </div>
               <div className="flex pl-5">
@@ -154,12 +154,6 @@ const Terms = () => {
           </Grid>
         </Grid>
       </Grid>
-
-      {/* <Grid container alignItems="flex-end">
-        <Grid item sx={{ width: '100%' }}>
-          <Footer />
-        </Grid>
-      </Grid> */}
     </Grid>
   )
 }

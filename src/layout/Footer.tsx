@@ -90,14 +90,14 @@ const Footer = () => {
         className="pt-2 text-center bg-black2"
       >
         <Grid item>
-          <Link to="/privacy-terms-policy">
+          <Link to="/terms-of-use">
             <p className="fineprint-text hover:text-transparent underline bg-clip-text bg-gradient-to-r from-gradient1 to-gradient2">
               Terms of Use
             </p>
           </Link>
         </Grid>
         <Grid item>
-          <Link to="/privacy-terms-policy">
+          <Link to="/privacy-policy">
             <p className="fineprint-text hover:text-transparent underline bg-clip-text bg-gradient-to-r from-gradient1 to-gradient2">
               Privacy policy
             </p>
