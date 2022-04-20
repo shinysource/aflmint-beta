@@ -1,4 +1,5 @@
 import { Grid, Box } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -89,32 +90,22 @@ const Footer = () => {
         className="pt-2 text-center bg-black2"
       >
         <Grid item>
-          <p className="fineprint-text">
-            <a
-              className="hover:text-transparent underline bg-clip-text bg-gradient-to-r from-gradient1 to-gradient2"
-              href="https://www.afl.com.au/privacy"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Terms of use
-            </a>
-          </p>
+          <Link to="/privacy-terms-policy">
+            <p className="fineprint-text hover:text-transparent underline bg-clip-text bg-gradient-to-r from-gradient1 to-gradient2">
+              Terms of Use
+            </p>
+          </Link>
         </Grid>
         <Grid item>
-          <p className="fineprint-text">
-            <a
-              className="hover:text-transparent underline bg-clip-text bg-gradient-to-r from-gradient1 to-gradient2"
-              href="https://www.afl.com.au/privacy"
-              target="_blank"
-              rel="noreferrer"
-            >
+          <Link to="/privacy-terms-policy">
+            <p className="fineprint-text hover:text-transparent underline bg-clip-text bg-gradient-to-r from-gradient1 to-gradient2">
               Privacy policy
-            </a>
-          </p>
+            </p>
+          </Link>
         </Grid>
         <Grid item>
           <p className="fineprint-text">
-            Copyright @2022 AFL. All Rights Reserved
+            Copyright &copy;2022 AFL. All Rights Reserved
           </p>
         </Grid>
       </Grid>
