@@ -78,7 +78,6 @@ const Signup = () => {
       const elems = JSON.parse(element.value)
       elems['ts'] = JSON.stringify(new Date().getTime())
       element.value = JSON.stringify(elems)
-      console.log(elems)
       if (!token) {
         setTokenError(true)
         return
@@ -117,7 +116,7 @@ const Signup = () => {
           <img src="/assets/logo/Logo.svg"></img>
         </Grid>
         <Grid item className="text-[32px] font-bold text-white">
-          <div className="font-podium49">SUBSCRIBE</div>
+          <div className="font-podium49">WHITELIST</div>
         </Grid>
       </Grid>
 
