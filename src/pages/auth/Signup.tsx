@@ -79,6 +79,7 @@ const Signup = () => {
         const elems = JSON.parse(element.value)
         elems['ts'] = JSON.stringify(new Date().getTime())
         element.value = JSON.stringify(elems)
+        console.log(elems)
       }
       if (!token) {
         setTokenError(true)
