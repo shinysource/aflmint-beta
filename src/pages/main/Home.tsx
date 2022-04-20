@@ -3,11 +3,11 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import { Link } from 'react-router-dom'
 
 import CustomButton from 'components/Button/CustomButton'
-import ScrollButton from 'components/Button/ScrollButton'
+import { useEffect } from 'react'
 import Footer from 'layout/Footer'
 import { ArrowAnim } from '../../components/Animations/Animations'
 
-const Home = () => {
+const Home = () => {  
   return (
     <div className="text-white">
       <Grid container className="py-10 home-back">

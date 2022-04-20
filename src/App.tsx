@@ -7,8 +7,9 @@ import Thanks from './pages/main/Thanks'
 import Terms from 'pages/main/Terms'
 
 const App = () => {
+  
   return (
-    <Routes>
+    <Routes>      
       <Route path="/" element={<HomePage />}></Route>
       <Route path="/registration" element={<SignupPage />}></Route>
       <Route path="/thank-you" element={<Thanks />}></Route>
