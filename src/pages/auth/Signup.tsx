@@ -240,7 +240,7 @@ const Signup = () => {
                 label={
                   <div className=" text-sm text-grey">
                     <p>
-                      I agree to the terms and conditions of the
+                      I agree to the terms and conditions of the&nbsp;
                       <Link to="/privacy-policy" className="underline">
                         AFL Privacy Policy
                       </Link>{' '}
