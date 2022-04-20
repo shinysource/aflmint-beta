@@ -13,6 +13,7 @@ import FormMobile from '../../components/Fields/FormMobile'
 
 import { lookup } from 'country-data'
 import useCountrySelect from 'hooks/useCountrySelect'
+import { Link } from 'react-router-dom'
 
 const validationSchema = Yup.object().shape({
   first_name: Yup.string().required('Enter your Firstname'),
@@ -240,22 +241,13 @@ const Signup = () => {
                   <div className=" text-sm text-grey">
                     <p>
                       I agree to the{' '}
-                      <a
-                        className="underline"
-                        href=" https://media.telstra.com.au/terms-of-use.html?ref=Net-Footer-Corp-Terms"
-                        target="_blank"
-                      >
+                      <Link to="/privacy-terms-policy" className="underline">
                         terms
-                      </a>{' '}
+                      </Link>{' '}
                       and conditions of the{' '}
-                      <a
-                        className="underline"
-                        href="https://www.afl.com.au/privacy"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
+                      <Link to="/privacy-terms-policy" className="underline">
                         AFL Privacy Policy
-                      </a>{' '}
+                      </Link>{' '}
                       and to receiving communications in relation to AFL Mint
                       announcements, including AFL Mint pre-sales, new drops and
                       special offers.
