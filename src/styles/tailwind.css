@@ -94,26 +94,32 @@ body * {
   12.66%,
   100% {
     transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
   }
   16.66%,
   29.32% {
     transform: translate3d(0, -20%, 0);
+    -webkit-transform: translate3d(0, -20%, 0);
   }
   33.32%,
   45.98% {
     transform: translate3d(0, -40%, 0);
+    -webkit-transform: translate3d(0, -40%, 0);
   }
   49.98%,
   62.64% {
     transform: translate3d(0, -60%, 0);
+    -webkit-transform: translate3d(0, -60%, 0);
   }
   66.64%,
   79.3% {
     transform: translate3d(0, -80%, 0);
+    -webkit-transform: translate3d(0, -80%, 0);
   }
   83.3%,
   95.96% {
     transform: translate3d(0, -0%, 0);
+    -webkit-transform: translate3d(0, -0%, 0);
   }
 }
 
@@ -122,26 +128,32 @@ body * {
   12.66%,
   100% {
     transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
   }
   16.66%,
   29.32% {
     transform: translate3d(0, -20%, 0);
+    -webkit-transform: translate3d(0, -20%, 0);
   }
   33.32%,
   45.98% {
     transform: translate3d(0, -40%, 0);
+    -webkit-transform: translate3d(0, -40%, 0);
   }
   49.98%,
   62.64% {
     transform: translate3d(0, -60%, 0);
+    -webkit-transform: translate3d(0, -60%, 0);
   }
   66.64%,
   79.3% {
     transform: translate3d(0, -80%, 0);
+    -webkit-transform: translate3d(0, -80%, 0);
   }
   83.3%,
   95.96% {
     transform: translate3d(0, -0%, 0);
+    -webkit-transform: translate3d(0, 0, 0);
   }
 }
 
@@ -150,26 +162,32 @@ body * {
   12.66%,
   100% {
     transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
   }
   16.66%,
   29.32% {
     transform: translate3d(0, -20%, 0);
+    -webkit-transform: translate3d(0, -20%, 0);
   }
   33.32%,
   45.98% {
     transform: translate3d(0, -40%, 0);
+    -webkit-transform: translate3d(0, -40%, 0);
   }
   49.98%,
   62.64% {
     transform: translate3d(0, -60%, 0);
+    -webkit-transform: translate3d(0, -60%, 0);
   }
   66.64%,
   79.3% {
     transform: translate3d(0, -80%, 0);
+    -webkit-transform: translate3d(0, -80%, 0);
   }
   83.3%,
   95.96% {
     transform: translate3d(0, -0%, 0);
+    -webkit-transform: translate3d(0, 0, 0);
   }
 }
 
@@ -178,25 +196,31 @@ body * {
   12.66%,
   100% {
     transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
   }
   16.66%,
   29.32% {
     transform: translate3d(0, -20%, 0);
+    -webkit-transform: translate3d(0, -20%, 0);
   }
   33.32%,
   45.98% {
     transform: translate3d(0, -40%, 0);
+    -webkit-transform: translate3d(0, -40%, 0);
   }
   49.98%,
   62.64% {
     transform: translate3d(0, -60%, 0);
+    -webkit-transform: translate3d(0, -60%, 0);
   }
   66.64%,
   79.3% {
     transform: translate3d(0, -80%, 0);
+    -webkit-transform: translate3d(0, -80%, 0);
   }
   83.3%,
   95.96% {
     transform: translate3d(0, -0%, 0);
+    -webkit-transform: translate3d(0, 0, 0);
   }
 }
