@@ -33,10 +33,6 @@ body * {
   @apply min-h-screen bg-no-repeat bg-cover bg-center overflow-auto  bg-none bg-black1 xs:bg-[url('/assets/Image/Thank-you-image.jpg')] md:bg-[url('/assets/Image/Thank-you-image.jpg')] lg:bg-[url('/assets/Image/Thank-you-image.jpg')];
 }
 
-.footer-img {
-  @apply bg-[url('/assets/Footer/Footer-mobile.svg')] sm:bg-[url('/assets/Footer/Footer-mobile.svg')] md:bg-[url('/assets/Footer/Footer-tablet.svg')] lg:bg-[url('/assets/Footer/Footer.svg')];
-}
-
 .hero-text {
   @apply font-podium96 font-normal text-4xl leading-[36px] lg:font-medium lg:text-5xl lg:leading-[48px] xl:text-7xl xl:leading-[72px];
 }
