@@ -24,7 +24,7 @@ const Footer = () => {
                 onMouseOut={(e) =>
                   (e.currentTarget.src = '/assets/Icon/Twitter-light.svg')
                 }
-              />
+                alt='Twitter page link'/>
             </a>
           </Grid>
           <Grid item sx={{ py: '5px' }}>
@@ -37,7 +37,7 @@ const Footer = () => {
                 onMouseOut={(e) =>
                   (e.currentTarget.src = '/assets/Icon/Discord-light.svg')
                 }
-              />
+                alt='Discord channel link'/>
             </a>
           </Grid>
           <Grid item sx={{ py: '5px' }}>
@@ -50,7 +50,7 @@ const Footer = () => {
                 onMouseOut={(e) =>
                   (e.currentTarget.src = '/assets/Icon/Instagram-light.svg')
                 }
-              />
+                alt='Instagram page link'/>
             </a>
           </Grid>
           <Grid item sx={{ py: '5px' }}>
@@ -63,7 +63,7 @@ const Footer = () => {
                 onMouseOut={(e) =>
                   (e.currentTarget.src = '/assets/Icon/Facebook-light.svg')
                 }
-              />
+                alt='Facebook page link'/>
             </a>
           </Grid>
         </Grid>

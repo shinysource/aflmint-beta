@@ -114,7 +114,7 @@ const Signup = () => {
         justifyContent="center"
       >
         <Grid item>
-          <img src="/assets/logo/Logo.svg"></img>
+          <img src="/assets/logo/Logo.svg" alt='AFL Mint Logo'></img>
         </Grid>
         <Grid item className="text-[32px] font-bold text-white">
           <div className="font-podium49">WHITELIST</div>

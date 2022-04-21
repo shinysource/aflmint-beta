@@ -10,7 +10,11 @@ const ScrollButton = () => {
 
   return (
     <Button onClick={scrollToTop}>
-      <img src="/assets/Icon/ArrowDown.svg" className="w-8" />
+      <img
+        src="/assets/Icon/ArrowDown.svg"
+        className="w-8"
+        alt="Down arrow to next section"
+      />
     </Button>
   )
 }

@@ -8,7 +8,7 @@ const Thanks = () => {
       <Grid item container justifyContent="center">
         <Grid item>
           <Link to="/">
-            <img src="/assets/logo/Logo.svg"></img>
+            <img src="/assets/logo/Logo.svg" alt="AFL Mint Logo"></img>
           </Link>
         </Grid>
         <Grid

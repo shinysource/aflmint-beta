@@ -22,15 +22,15 @@ body * {
 }
 
 .signup-back {
-  @apply min-h-screen bg-no-repeat bg-cover overflow-auto bg-black1 bg-[url('/backMobile.svg')] sm:bg-[url('/back.svg')] md:bg-[url('/back.svg')] lg:bg-[url('/back.svg')];
+  @apply min-h-screen bg-no-repeat bg-cover bg-center overflow-auto bg-black1 bg-[url('/assets/Image/Thank-you-image.jpg')] sm:bg-[url('/assets/Image/Thank-you-image.jpg')] md:bg-[url('/assets/Image/Thank-you-image.jpg')] lg:bg-[url('/assets/Image/Thank-you-image.jpg')];
 }
 
 .home-back {
-  @apply min-h-screen bg-no-repeat bg-cover bg-center overflow-auto bg-black2 bg-[url('/assets/Image/Hero-mobile.svg')] sm:bg-[url('/assets/Image/Hero.svg')] md:bg-[url('/assets/Image/Hero.svg')] lg:bg-[url('/assets/Image/Hero.svg')];
+  @apply min-h-screen bg-no-repeat bg-cover bg-center overflow-auto bg-black2 bg-[url('/assets/Image/Hero-image-mobile.jpg')] sm:bg-[url('/assets/Image/Hero-image.jpg')] md:bg-[url('/assets/Image/Hero-image.jpg')] lg:bg-[url('/assets/Image/Hero-image.jpg')];
 }
 
 .thanks-back {
-  @apply min-h-screen bg-no-repeat bg-cover overflow-auto  bg-none bg-black1 sm:bg-[url('/back.svg')] md:bg-[url('/back.svg')] lg:bg-[url('/back.svg')];
+  @apply min-h-screen bg-no-repeat bg-cover bg-center overflow-auto  bg-none bg-black1 xs:bg-[url('/assets/Image/Thank-you-image.jpg')] md:bg-[url('/assets/Image/Thank-you-image.jpg')] lg:bg-[url('/assets/Image/Thank-you-image.jpg')];
 }
 
 .footer-img {
