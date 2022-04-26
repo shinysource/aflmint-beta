@@ -28,7 +28,7 @@ const Footer = () => {
             </a>
           </Grid>
           <Grid item sx={{ py: '5px' }}>
-            <a href="https://discord.com/invite/hnJakyPd" className="">
+            <a href="https://discord.gg/f3ZfARD3" className="">
               <img
                 src="/assets/Icon/Discord-light.svg"
                 onMouseOver={(e) => {
