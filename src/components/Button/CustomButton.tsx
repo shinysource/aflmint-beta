@@ -92,17 +92,13 @@ const CustomButton = ({
 
   return (
     <ThemeProvider theme={theme}>
-      <FormGroup>
-        <Button
-          className={`${classes[model]} ${
-            classes[size || 'large']
-          } ${className}`}
-          onClick={onClick}
-          {...rest}
-        >
-          {label}
-        </Button>
-      </FormGroup>
+      <Button
+        className={`${classes[model]} ${classes[size || 'large']} ${className}`}
+        onClick={onClick}
+        {...rest}
+      >
+        {label}
+      </Button>
     </ThemeProvider>
   )
 }

@@ -57,7 +57,6 @@ const Signup = () => {
   const retURL = useMemo(() => `${window.location.origin}/thank-you`, [window])
   const [token, setToken] = useState('')
   const [tokenError, setTokenError] = useState(false)
-  // const salesforceURL = (import.meta.env.VITE_SALESFORCE_URL || '').toString()
 
   const onCaptchaChange = (value: string | null) => {
     setToken(value || '')
@@ -114,7 +113,7 @@ const Signup = () => {
         justifyContent="center"
       >
         <Grid item>
-          <img src="/assets/logo/Logo.svg" alt='AFL Mint Logo'></img>
+          <img src="/assets/logo/Logo.svg" alt="AFL Mint Logo"></img>
         </Grid>
         <Grid item className="text-[32px] font-bold text-white">
           <div className="font-podium49">WHITELIST</div>
@@ -286,6 +285,7 @@ const Signup = () => {
                 type="button"
                 model="primary"
                 variant="contained"
+                className="w-full"
                 label="SUBSCRIBE"
                 onClick={() => {
                   formik.handleSubmit()
